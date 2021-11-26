@@ -254,5 +254,15 @@ insert
 
 
 
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Alick', 'Nehls', 'anehls0', 'anehls0@livejournal.com', 'M5hea450', 'Entertainment Gaming Asia Incorporated');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Ravi', 'Shillinglaw', 'rshillinglaw1', 'rshillinglaw1@spotify.com', 'TiuFCZ3ujclw', 'Rogers Corporation');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Karyn', 'Hargie', 'khargie2', 'khargie2@fema.gov', 'VwirYdtf45xU', 'SunTrust Banks, Inc.');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Petrina', 'Cassell', 'pcassell3', 'pcassell3@shutterfly.com', '18R49DFib', 'Herbalife LTD.');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Esmaria', 'Tench', 'etench4', 'etench4@topsy.com', 'kXAIwEZ45DG', 'D/B/A Chubb Limited New');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Therine', 'Kilgannon', 'tkilgannon5', 'tkilgannon5@hp.com', '2nEF7u23Cid', 'Drive Shack Inc.');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Rolph', 'Cottham', 'rcottham6', 'rcottham6@ezinearticles.com', 'fC3YMarFtXF', 'iShares PHLX SOX Semiconductor Sector Index Fund');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Marieann', 'Checketts', 'mchecketts7', 'mchecketts7@homestead.com', 'QHgF3CHxw59', 'Nuveen Floating Rate Income Fund');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Beulah', 'MacKaig', 'bmackaig8', 'bmackaig8@weibo.com', 'g5rt9Q8h', 'Blackrock Capital and Income Strategies Fund Inc');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Amby', 'Tilzey', 'atilzey9', 'atilzey9@addthis.com', 'leQ7YjaXD1ez', 'First Trust Low Duration Opportunities ETF');
 
 
