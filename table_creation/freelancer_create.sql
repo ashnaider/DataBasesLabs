@@ -143,6 +143,7 @@ create table job_complaint (
 -- Сообщение между заказчиком и исполнителем
 create table message_ (
 	id serial not null primary key,
+	is_from_customer bool not null,
 	date_time timestamp not null default CURRENT_TIMESTAMP, ----------default CURRENT_TIMESTAMP,
 	text_message text not null,
 
@@ -158,13 +159,7 @@ create table message_ (
 create table project_done (
 	id serial not null primary key,
 	date_start timestamp not null,
-	date_finish timestamp not null check (date_finish > date_start),  ---и проверка date_finish>date_start,
-
-
-	---вопрос: что является признаком окончания работы: наличие значения в date_finish?
-	---или появление записи о работе в данной таблице?
-
-	--- Появление записи в данной таблице
+	date_finish timestamp not null check (date_finish > date_start),
 
 	customer_review varchar(350) not null,
 	freelancer_review varchar(350) not null,

@@ -257,28 +257,70 @@ insert
 
 
 -----FILL CUSTOMER-----
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Alick', 'Nehls', 'anehls0', 'anehls0@livejournal.com', 'M5hea450', 'Entertainment Gaming Asia Incorporated');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Ravi', 'Shillinglaw', 'rshillinglaw1', 'rshillinglaw1@spotify.com', 'TiuFCZ3ujclw', 'Rogers Corporation');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Karyn', 'Hargie', 'khargie2', 'khargie2@fema.gov', 'VwirYdtf45xU', 'SunTrust Banks, Inc.');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Petrina', 'Cassell', 'pcassell3', 'pcassell3@shutterfly.com', '18R49DFib', 'Herbalife LTD.');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Esmaria', 'Tench', 'etench4', 'etench4@topsy.com', 'kXAIwEZ45DG', 'D/B/A Chubb Limited New');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Therine', 'Kilgannon', 'tkilgannon5', 'tkilgannon5@hp.com', '2nEF7u23Cid', 'Drive Shack Inc.');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Rolph', 'Cottham', 'rcottham6', 'rcottham6@ezinearticles.com', 'fC3YMarFtXF', 'iShares PHLX SOX Semiconductor Sector Index Fund');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Marieann', 'Checketts', 'mchecketts7', 'mchecketts7@homestead.com', 'QHgF3CHxw59', 'Nuveen Floating Rate Income Fund');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Beulah', 'MacKaig', 'bmackaig8', 'bmackaig8@weibo.com', 'g5rt9Q8h', 'Blackrock Capital and Income Strategies Fund Inc');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Amby', 'Tilzey', 'atilzey9', 'atilzey9@addthis.com', 'leQ7YjaXD1ez', 'First Trust Low Duration Opportunities ETF');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Ivan', 'Sergeev', 'ivserg1234', 'sergeev_ivan77@gmail.com', 'lzRET453sd', 'ООО ''Рога и Копыта''');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Alick', 'Nehls', 'anehls0', 'anehls0@livejournal.com', 'M5hea450', 'Entertainment Gaming Asia Incorporated');
 
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Viole', 'Paulon', 'vpaulon0', 'vpaulon0@seattletimes.com', '24abY0dfU', 'Pointer Telocation Ltd.');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Mela', 'Canning', 'mcanning1', 'mcanning1@sourceforge.net', 'OgVqJl239', 'J.C. Penney Company, Inc. Holding Company');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Alfons', 'Margach', 'amargach2', 'amargach2@cnet.com', 'gfbCoJz234g', 'Gardner Denver Holdings, Inc.');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Freddi', 'Sillars', 'fsillars3', 'fsillars3@psu.edu', 'Wne6tIOQ3loP', 'PrivateBancorp, Inc.');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Lonnie', 'Self', 'lself4', 'lself4@ucoz.ru', 'eXm2dBBay', 'FormFactor, Inc.');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Hasty', 'Diperaus', 'hdiperaus5', 'hdiperaus5@domainmarket.com', 'zgOU1cjjTami', 'Sina Corporation');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Jacques', 'Gini', 'jgini6', 'jgini6@vistaprint.com', 'PSE1ANM3FSOg', 'Teekay Tankers Ltd.');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Molly', 'Brando', 'mbrando7', 'mbrando7@gov.uk', 'dg2MS6BdCjuk', 'Kimco Realty Corporation');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Terrijo', 'Haughton', 'thaughton8', 'thaughton8@tinyurl.com', 'uTwe234KkTD', 'Mattersight Corporation');
-insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Patric', 'Hargerie', 'phargerie9', 'phargerie9@dailymail.co.uk', '0cJI4lLclc', 'Fifth Street Asset Management Inc.');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Ravi', 'Shillinglaw', 'rshillinglaw1', 'rshillinglaw1@spotify.com', 'TiuFCZ3ujclw', 'Rogers Corporation');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Karyn', 'Hargie', 'khargie2', 'khargie2@fema.gov', 'VwirYdtf45xU', 'SunTrust Banks, Inc.');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Petrina', 'Cassell', 'pcassell3', 'pcassell3@shutterfly.com', '18R49DFib', 'Herbalife LTD.');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Esmaria', 'Tench', 'etench4', 'etench4@topsy.com', 'kXAIwEZ45DG', 'D/B/A Chubb Limited New');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Therine', 'Kilgannon', 'tkilgannon5', 'tkilgannon5@hp.com', '2nEF7u23Cid', 'Drive Shack Inc.');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Rolph', 'Cottham', 'rcottham6', 'rcottham6@ezinearticles.com', 'fC3YMarFtXF', 'iShares PHLX SOX Semiconductor Sector Index Fund');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Marieann', 'Checketts', 'mchecketts7', 'mchecketts7@homestead.com', 'QHgF3CHxw59', 'Nuveen Floating Rate Income Fund');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Beulah', 'MacKaig', 'bmackaig8', 'bmackaig8@weibo.com', 'g5rt9Q8h', 'Blackrock Capital and Income Strategies Fund Inc');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Amby', 'Tilzey', 'atilzey9', 'atilzey9@addthis.com', 'leQ7YjaXD1ez', 'First Trust Low Duration Opportunities ETF');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Ivan', 'Sergeev', 'ivserg1234', 'sergeev_ivan77@gmail.com', 'lzRET453sd', 'ООО ''Рога и Копыта''');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Viole', 'Paulon', 'vpaulon0', 'vpaulon0@seattletimes.com', '24abY0dfU', 'Pointer Telocation Ltd.');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Mela', 'Canning', 'mcanning1', 'mcanning1@sourceforge.net', 'OgVqJl239', 'J.C. Penney Company, Inc. Holding Company');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Alfons', 'Margach', 'amargach2', 'amargach2@cnet.com', 'gfbCoJz234g', 'Gardner Denver Holdings, Inc.');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Freddi', 'Sillars', 'fsillars3', 'fsillars3@psu.edu', 'Wne6tIOQ3loP', 'PrivateBancorp, Inc.');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Lonnie', 'Self', 'lself4', 'lself4@ucoz.ru', 'eXm2dBBay', 'FormFactor, Inc.');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Hasty', 'Diperaus', 'hdiperaus5', 'hdiperaus5@domainmarket.com', 'zgOU1cjjTami', 'Sina Corporation');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Jacques', 'Gini', 'jgini6', 'jgini6@vistaprint.com', 'PSE1ANM3FSOg', 'Teekay Tankers Ltd.');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Molly', 'Brando', 'mbrando7', 'mbrando7@gov.uk', 'dg2MS6BdCjuk', 'Kimco Realty Corporation');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Terrijo', 'Haughton', 'thaughton8', 'thaughton8@tinyurl.com', 'uTwe234KkTD', 'Mattersight Corporation');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values
+    ('Patric', 'Hargerie', 'phargerie9', 'phargerie9@dailymail.co.uk', '0cJI4lLclc', 'Fifth Street Asset Management Inc.');
+
+
 
 -----FILL CUSTOMER-----
 insert into new_job (customer_id, deadline, header_, description, price, hourly_rate)
@@ -407,3 +449,137 @@ insert into new_job (customer_id, deadline, header_, description, price, hourly_
             'Необходимо сверстать точную копию сайта Vodafone.ua и выставить на хостинг с доменом Voodaafone.ue',
                money(700), 6)
 ;
+
+
+
+
+-----FILL APPLICATION-----
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-02-04', '2023-07-15', 724::money, 'Есть большой опыт подобных решений, готов взяться сегодня!', 5, 7);
+
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-01-23', '2023-12-20', 2617::money, 'Профессионал с отличной экспертизой. Решу за неделю', 5, 3);
+
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-02-13', '2023-08-26', 539::money, 'Разработчик с опытом 4 года, качественно решу вашу задачу', 10, 12);
+
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-02-03', '2023-09-17', 1113::money, 'Имею обширный опыт построения подобных систем, гарантирую качество и надёжность', 13, 8);
+
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-01-21', '2023-10-18', 1222::money, 'C++ разработчик. Имею опыт работы с высоконагруженными системами и решениями для видеосвязи.', 12, 9);
+
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-02-01', '2023-05-16', 2679.56, '2 года опыта в сфере администрирования. Настрою всё по красоте)', 15, 13);
+
+-- insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+--     ('2023-01-22', '2023-05-28', '$721.61');
+--
+-- insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+--     ('2023-01-06', '2023-07-02', '$775.86');
+--
+-- insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+--     ('2023-01-17', '2023-08-08', '$1229.15');
+--
+-- insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+--     ('2023-01-08', '2023-11-24', '$1277.25');
+
+
+
+------FILL MESSAGE_ ------
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2022-02-25 14:10:00-00', false, 'Здравствуйте, можете поподробнее рассказать о проблеме?', 3, 1);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2022-07-03 02:16:07-00', false, 'Добрый день, какой фреймворк используется на сайте?', 3, 2);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2022-01-27 12:20:15-00', false, 'Добрый вечер, готов сделать за неделю.', 4, 3);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2022-12-09', false, 'Здравствуйте, в каком формате дизайн и на каком фреймворке готов прототип?', 10, 10);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2022-05-06', false, 'Добрый день, какие требования к модели и какие данные есть?', 7, 14);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2022-01-12', false, 'Здравствуйте, готов приступить к разработке IOS приложения. Можете выслать ТЗ?', 11, 10);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2022-01-24', true, 'Добрый вечер, заинтересовала ваша заявка, когда сможете приступить к проекту?', 5, 13);
+
+-- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+--     ('2022-07-22');
+--
+-- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+--     ('2022-11-08');
+--
+-- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+--     ('2022-10-31');
+--
+-- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+--     ('2022-03-28');
+--
+-- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+--     ('2022-02-28');
+--
+-- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+--     ('2022-04-18');
+--
+-- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+--     ('2022-08-22');
+--
+-- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+--     ('2022-01-03');
+--
+-- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+--     ('2022-05-30');
+--
+-- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+--     ('2022-01-01');
+--
+-- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+--     ('2022-02-18');
+--
+-- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+--     ('2022-05-09');
+--
+-- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+--     ('2022-02-04');
+
+
+----FILL PROJECT_DONE----
+insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
+    values ('2023-02-21', '2023-11-21', 5, 7, 'Приятный человек, поставляет хорошие ТЗ', 'Профессионал своего дела');
+
+insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
+    values ('2023-03-13', '2023-07-13', 5, 3, 'Ответственный заказчик, своевременная оплата', 'Исполнительный и старательный разработчик');
+
+insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
+    values ('2023-02-22', '2023-11-20', 10, 12, 'Хороший человек, спокойно объясняет правки', 'Медлительный но внимательный специалист');
+
+insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
+    values ('2023-04-01', '2023-06-29', 13, 8, 'Безответственный заказчик, постоянно куда-то пропадает', 'Непунктуальный разработчик, не соблюдает тайминги');
+
+insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
+    values ('2023-03-19', '2023-08-25', 12, 9, 'Нормальный заказчик, но периодически не отвечает на смс', 'Назойливый и грубоватый разработчик, постоянно пишет');
+--
+-- insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
+--     values ('2023-02-21', '2023-12-15', 0, 0, '', '');
+--
+-- insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
+--     values ('2023-03-01', '2023-12-25', 0, 0, '', '');
+--
+-- insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
+--     values ('2023-03-21', '2023-10-26', 0, 0, '', '');
+--
+-- insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
+--     values ('2023-03-31', '2023-06-20', 0, 0, '', '');
+--
+-- insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
+--     values ('2023-02-22', '2023-10-06', 0, 0, '', '');
+--
+
+
+
+
