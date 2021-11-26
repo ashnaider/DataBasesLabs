@@ -1,3 +1,5 @@
+
+-----FILL TECHNOLOGY----
 insert into technology (tech_name) values
 	('Python3'),
 	('Django'),
@@ -68,7 +70,7 @@ insert into technology (tech_name) values
 	;
 
 
-
+-----FILL FREELANCER-----
 insert into freelancer (first_name, last_name, email, login, password_, specialization) values ('Celle', 'Whitlaw', 'cwhitlaw0@patch.com', 'cwhitlaw0', 'asdfWER45',
                                                                                                 'Python developer');
 
@@ -114,7 +116,7 @@ insert into freelancer (first_name, last_name, email, login, password_, speciali
 insert into freelancer (first_name, last_name, email, login, password_, specialization) values ('Edvard', 'Swadlen', 'eswadlene@vistaprint.com', 'eswadlene', 'uWvg234VNI',
                                                                                                 'DevOps');
 
-
+----FILL TECHNOLOGY STACK-----
 insert
     into technology_stack (freelancer_id, technology_id)
         values
@@ -254,6 +256,7 @@ insert
 
 
 
+-----FILL CUSTOMER-----
 insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Alick', 'Nehls', 'anehls0', 'anehls0@livejournal.com', 'M5hea450', 'Entertainment Gaming Asia Incorporated');
 insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Ravi', 'Shillinglaw', 'rshillinglaw1', 'rshillinglaw1@spotify.com', 'TiuFCZ3ujclw', 'Rogers Corporation');
 insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Karyn', 'Hargie', 'khargie2', 'khargie2@fema.gov', 'VwirYdtf45xU', 'SunTrust Banks, Inc.');
@@ -264,5 +267,143 @@ insert into customer (first_name, last_name, login, email, password_, organisati
 insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Marieann', 'Checketts', 'mchecketts7', 'mchecketts7@homestead.com', 'QHgF3CHxw59', 'Nuveen Floating Rate Income Fund');
 insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Beulah', 'MacKaig', 'bmackaig8', 'bmackaig8@weibo.com', 'g5rt9Q8h', 'Blackrock Capital and Income Strategies Fund Inc');
 insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Amby', 'Tilzey', 'atilzey9', 'atilzey9@addthis.com', 'leQ7YjaXD1ez', 'First Trust Low Duration Opportunities ETF');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Ivan', 'Sergeev', 'ivserg1234', 'sergeev_ivan77@gmail.com', 'lzRET453sd', 'ООО ''Рога и Копыта''');
+
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Viole', 'Paulon', 'vpaulon0', 'vpaulon0@seattletimes.com', '24abY0dfU', 'Pointer Telocation Ltd.');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Mela', 'Canning', 'mcanning1', 'mcanning1@sourceforge.net', 'OgVqJl239', 'J.C. Penney Company, Inc. Holding Company');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Alfons', 'Margach', 'amargach2', 'amargach2@cnet.com', 'gfbCoJz234g', 'Gardner Denver Holdings, Inc.');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Freddi', 'Sillars', 'fsillars3', 'fsillars3@psu.edu', 'Wne6tIOQ3loP', 'PrivateBancorp, Inc.');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Lonnie', 'Self', 'lself4', 'lself4@ucoz.ru', 'eXm2dBBay', 'FormFactor, Inc.');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Hasty', 'Diperaus', 'hdiperaus5', 'hdiperaus5@domainmarket.com', 'zgOU1cjjTami', 'Sina Corporation');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Jacques', 'Gini', 'jgini6', 'jgini6@vistaprint.com', 'PSE1ANM3FSOg', 'Teekay Tankers Ltd.');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Molly', 'Brando', 'mbrando7', 'mbrando7@gov.uk', 'dg2MS6BdCjuk', 'Kimco Realty Corporation');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Terrijo', 'Haughton', 'thaughton8', 'thaughton8@tinyurl.com', 'uTwe234KkTD', 'Mattersight Corporation');
+insert into customer (first_name, last_name, login, email, password_, organisation_name) values ('Patric', 'Hargerie', 'phargerie9', 'phargerie9@dailymail.co.uk', '0cJI4lLclc', 'Fifth Street Asset Management Inc.');
+
+-----FILL CUSTOMER-----
+insert into new_job (customer_id, deadline, header_, description, price, hourly_rate)
+    values
+         (1, '2023-03-22 18:10:25-07',
+               'Сверстать landing page для булочной',
+               'Необходимо сверстать лендинг для сети булочных. Дизайн готов и представлен в figma.',
+               money(170), 2),
+
+         (2, '2023-01-4 12:00:00-00',
+             'Создать кнопку + прогресс бар(нажал +10% нажал +20% нажал +50% и т.д) ',
+             'Нужно создать кнопку со ссылкой типо "поделиться". нажав на которую произойдет 2 вещи:' ||
+             '1) Всплывет на к примеру VK (стандартная вещь как у всех) на том же яндексе кнопках' ||
+             '2) Над кнопкой на прогресс баре появиться значение 10%',
+
+               money(30), 1.7),
+
+        (1, '2023-02-1 6:10:25-00',
+            'Создать одностраничный сайт - Продажа автозапчастей',
+            'Создать продающий лендинг, далее будет запускаться контекст' ||
+            'Контент есть ',
+               money(170), 2),
+
+        (4, '2023-08-30 23:00:00-00',
+            'Создание бэкэнда для сервиса геймификации на Django',
+            'Нужно создать бэкэнд для сервиса геймификации на Django ориентируясь на приложенное техническое задание',
+               money(400), 3),
+
+        (5, '2023-02-16 16:30:00-00',
+            'Восстановить работу Ebay API ',
+            ' Есть старый самописный модуль на PHP, лет 5 работавший с Ebay API shopping. После того как Ebay что-то сломал, модуль перестал работать и возвращает ошибку 1199, решения по которой не гуглятся.' ||
+            'Задача — или восстановить работу этого модуля, или прикрутить библиотеку на ваш выбор.' ||
+            'Все доступы-токены-пароли для Ebay есть.' ||
+            'Проект на Гитхабе.',
+               money(50), 2),
+
+        (2, '2023-05-05 00:00:00-00',
+            'Доработка мобильного приложения на Kotlin под Android',
+            'Нужен разработчик для доработка Android-приложения (Kotlin).\n' ||
+
+            'Нужно реализовать поддержку нескольких новых методов API (бэкэнда) и устранить ряд замечаний по UI. Детали при личном общении.\n' ||
+
+            'Стек: Kotlin, Dagger, RxJava2, Retrofit, Room, Google Maps.',
+               money(350), 4),
+
+        (4, '2023-07-25 20:00:00-6',
+            'Ruby проект',
+            'Здравствуйте! Мы в поисках рубиста для работы в коммерческом проекте. Стёк: Rails4, ruby 2.4 ActiveAdmin. Если знакомы с webpacker, vue.js, .slim - только плюс. Уровень strong junior або middlе. Больше деталей при обсуждении.',
+               money(550), 5),
+
+        (5, '2023-06-8 12:00:00-00',
+            'Бекенд для сбора данных и отправки задач на др.сервер ',
+            'Сделать сервис, получающий данные относительно пользовательских файлов, инструкцию относительно того что необходимо сделать с этими данными и отправлять на сервер который работает с этими данными.\n' ||
+            '1. Получать запросы от четырех серверов\n' ||
+            'Каждый из запросов хорошо сформулирован, сейчас нужно написать инструкцию в постмане на них.\n' ||
+            '2. Обрабатывать информацию и сохранять в Postgres\n'||
+            '3. Рассчитывать следующие файлы для осуществления работы с ними и отправлять имя, адрес файла и инструкцию о работе. Принимать ответ и записывать его в БД',
+               money(770), 6),
+
+        (6, '2023-03-5 19:50:25-03',
+            'Собрать RTSP потоки с 4-х камер и объединить в один',
+            'Добрый день. Есть 4ые локальные IP камеры. Требуется собрать с каждой камеры RTSP поток объединить в один, сложив картинки с каждой камеры в ряд и получить один RTSP поток.\n'||
+            'Разрешение с каждой камеры желательно HD, битрейт 500-1000, фпс 10-12 ',
+               money(350), 4),
+
+        (2, '2023-09-1 13:13:13-13',
+            'Разработать мобильное приложение на Kotlin и Swift ',
+            'Нужно создать MVP мобильного на Kotlin (Android), Swift (iOS) + написать серверную часть на GO или Python + базу данных Postgres.\n'||
+            'Дизайн и прототип уже готовы.',
+               money(950), 5),
+
+        (3, '2023-04-4 17:23:29-7',
+            'Сиздать систему подсчёта хлебов на конвеере',
+            'Есть конвеер, на котором едут буханки хлеба, над ним находится камера, зафиксированная в одном положении. ' ||
+            'Необходимо производить точный подсчёт продукции.',
+               money(850), 10),
+
+        (7, '2023-08-17 06:10:15-00',
+            'Написать мобильное кроссплатформенное приложение для интернет-магазина ',
+            'Для интернет-магазина безалкогольных напитков необходимо написать кроссплатформенное мобильное приложение на Android и IOS. Дизайн на стороне заказчика. Мобильное приложение похоже на приложение Азбуки вкуса. \n' ||
+            'Методы по API с сайта должны передаваться в мобильное приложение.',
+               money(700), 4),
+
+        (8, '2023-01-19 14:10:27-2',
+            'Добавить в docker контейнер поддержку сертификатов Let''s Encrypt',
+            'Нужно:\n1. Добавить в процедуру билда докера (скрипт create.sh) параметр "domain", который будет содержать имя домена, и для него генерировать SSL сертификат через Let''s Encrypt внутри докера. Файл сертификата должен размещаться в каталоге /root/cert/. \n'||
+            '2. Добавить в cron файл (он уже есть) процедуру обновления сертификата, чтобы он не экспайрился.',
+               money(170), 2),
+
+        (9, '2023-04-12 15:00:30-00',
+            'Разработать NLP-модель классификации медицинских текстов',
+            'Общая задача: по данным электронной медицинской карты (набор текстов во времени) определить были ли исполнены критерия качества оказания помощи.\n' ||
+            'Ограничения: данные в карте могут быть неполными или не соответствовать диагнозу, приемов может быть несколько в рамках лечения одного кейса.',
+               money(2200), 14),
+
+        (10, '2023-05-01 00:10:25-6',
+            'Нужно разработать алгоритм автоматического составления расписания ',
+            'Нужно разработать алгоритм автоматического составления расписания ориентируясь на приложенное техническое задание',
+               money(350), 6),
 
 
+
+        (11, '2023-03-10 12:13:14-5',
+            'Ставки на спорт!!',
+            'Ставки на спорт!! Высокие коэффициенты!!',
+               money(3000), 13),
+
+        (11, '2023-03-11 14:15:27-00',
+            'Быстрый займ!!!',
+            'Быстрые займы!!! Нужен только паспорт!!! Низкий процент!!!',
+               money(4500), 12),
+
+        (12, '2023-01-18 19:10:25-07',
+            'Взломать страницу ВК',
+            'Нужно взломать страницу ВК, ссылку скину в личные сообщения',
+               money(150), 8),
+
+        (13, '2023-02-28 00:00:00-00',
+            'Доработать систему оплаты и подмену целевой ссылки в онлайн казино',
+            'Имеется онлайн казино, где оплата происходит картой, но при вводе данных, нужно произвести подмену ссылки\n ' ||
+            'и перевести пользователя по указанному адресу.',
+               money(1000), 10),
+
+        (14, '2023-04-7 15:00:30-00',
+            'Сверстать точную копию сайта Vodafone.ua',
+            'Необходимо сверстать точную копию сайта Vodafone.ua и выставить на хостинг с доменом Voodaafone.ue',
+               money(700), 6)
+;

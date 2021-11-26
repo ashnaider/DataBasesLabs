@@ -92,7 +92,7 @@ create table new_job (
 
 	deadline timestamp   not null check (deadline > CURRENT_TIMESTAMP),  ---надо добавить проверку, чтобы deadline было больше, чем CURRENT_TIMESTAMP
 	header_ varchar(250) not null,
-	description varchar(450) not null,
+	description varchar(650) not null,
 	price money not null check (price > 0::money),  -----тут случайно не надо not null? или работа может быть бесплатной?
 	hourly_rate money not null check (hourly_rate > 0::money)  ---тот же вопрос
 );
