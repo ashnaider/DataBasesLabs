@@ -3,7 +3,8 @@ drop table technology;
 
 drop table project_done;
 drop table job_complaint;
-drop type job_complaint_type;
+drop table user_complaint;
+drop type complaint_type;
 
 drop table message_;
 
@@ -115,19 +116,20 @@ create table application (
 );
 
 
-create type job_complaint_type as enum (
-	'inappropriate_content',  -- неприемлимый контент
-	'fraud',                  -- мошенничество
-	'illegal_actions',        -- незаконные действия
+create type complaint_type as enum (
+	'inappropriate_content',
+	'fraud',
+	'illegal_actions',
+    'spam',
 	'other'
 );
 
 
--- Жалоба исполнителя (фрилансера) на объявление
+---Freelancer's complaint on the new_job
 create table job_complaint (
 	id serial not null primary key,
-	date_time timestamp not null default CURRENT_TIMESTAMP,  ------default CURRENT_TIMESTAMP,
-	complaint_type job_complaint_type not null,
+	date_time timestamp not null default CURRENT_TIMESTAMP,
+	complaint_type complaint_type not null,
 	description varchar(550),
 
 	freelancer_id int not null
@@ -140,11 +142,31 @@ create table job_complaint (
 );
 
 
--- Сообщение между заказчиком и исполнителем
+---Customer's complaint on freelancer,
+-----or freelancer's complaint on customer
+create table user_complaint (
+	id serial not null primary key,
+	date_time timestamp not null default CURRENT_TIMESTAMP,
+	is_from_customer bool not null,
+	complaint_type complaint_type not null,
+	description varchar(550),
+
+    customer_id int not null
+		references customer(id)
+		on delete restrict on update cascade,
+
+	freelancer_id int not null
+		references freelancer(id)
+		on delete restrict on update cascade
+);
+
+
+---Message between customer and freelancer
+------both can write each other
 create table message_ (
 	id serial not null primary key,
 	is_from_customer bool not null,
-	date_time timestamp not null default CURRENT_TIMESTAMP, ----------default CURRENT_TIMESTAMP,
+	date_time timestamp not null default CURRENT_TIMESTAMP,
 	text_message text not null,
 
 	freelancer_id int not null

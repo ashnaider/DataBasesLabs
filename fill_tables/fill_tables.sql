@@ -582,4 +582,75 @@ insert into project_done (date_start, date_finish, freelancer_id, customer_id, f
 
 
 
+-- 	'inappropriate_content',
+-- 	'fraud',
+-- 	'illegal_actions',
+--     'spam',
+-- 	'other'
+
+----FILL JOB_COMPLAINT----
+insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
+    ('2023-04-17 16:39:23', 'spam', 'Спам-реклама ставок на спорт', 6, 16);
+
+insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
+    ('2023-02-03 21:56:58', 'fraud', 'Реклама микрокредитов в качестве объявления', 2, 17);
+
+insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
+    ('2023-02-23 08:28:04', 'spam', 'Администрация, вы куда смотрите? у вас спам по объявлениям гуляет', 12, 16);
+
+insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
+    ('2023-01-06 07:30:49', 'illegal_actions', 'Размещено объявление, цель которого нарушить право '||
+                                               'на личную переписку и доступ к личным данным', 9, 18);
+
+insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
+    ('2023-06-22 17:15:03', 'fraud', 'Заказ для казино, для подмены ссылки и обмана пользователей, '||
+                                     'админ, удали объявление', 1, 19);
+
+insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
+    ('2023-07-26 11:51:47', 'other', 'Неадекватоне задание. Решение NP-полной задачи, вы серьезно?', 8, 15);
+--
+-- insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
+--     ('2023-07-14 19:00:39', '', '', 0, 0);
+--
+-- insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
+--     ('2023-07-31 05:33:16', '', '', 0, 0);
+--
+-- insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
+--     ('2023-08-29 07:49:32', '', '', 0, 0);
+--
+-- insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
+--     ('2023-11-26 23:01:40', '', '', 0, 0);
+
+
+
+----FILL USER_COMPLAINT-----
+insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
+    values ('2023-07-23 06:44:36', false, 'fraud', 'Человек обманывает и кидает людей. На звонки и смс не отвечает', 4, 9);
+
+insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
+    values ('2023-06-25 20:04:51', false, 'spam', 'Заказчик неадекватный, требует выполнить работу за копейки, хотя я даже не подавал заявку', 8, 2);
+
+insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
+    values ('2023-05-15 18:41:19', false, 'illegal_actions', 'Заказчик предлагает провести оплату окольными путями, в обход налогов', 10, 5);
+
+insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
+    values ('2023-11-24 17:49:14', false, 'inappropriate_content', 'У исполнителя неприемливое фото на аватарке и странный ник', 1, 4);
+
+insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
+    values ('2023-10-04 23:25:52', false, 'spam', 'Исполнитель слишком навящивый, написывает о исполнении проекта, хотя я даже его не подтверждал', 2, 11);
+--
+-- insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
+--     values ('2023-08-31 20:33:14', false, '', '', 0, 0);
+--
+-- insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
+--     values ('2023-08-24 19:42:59', false, '', '', 0, 0);
+--
+-- insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
+--     values ('2023-08-18 01:59:50', false, '', '', 0, 0);
+--
+-- insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
+--     values ('2023-08-05 16:00:54', false, '', '', 0, 0);
+--
+-- insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
+--     values ('2023-10-29 17:48:09', false, '', '', 0, 0);
 
