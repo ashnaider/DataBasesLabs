@@ -54,8 +54,6 @@ create table freelancer (
 	last_name name_domain not null,
 	resume_link varchar(250),
 	specialization varchar(250) not null
-
-	----technology_stack_id int ----------------этого столбца нет (и не дожно быть) в таблице на ER-диаграмме
 );
 
 create table technology_stack (
@@ -70,7 +68,6 @@ create table technology_stack (
 		on delete cascade on update cascade,
 
 	unique(freelancer_id, technology_id)
-	-------внешние ключи?
 );
 
 
@@ -91,18 +88,18 @@ create table new_job (
 		references customer(id)
 		on delete restrict on update cascade,
 
-	deadline timestamp   not null check (deadline > CURRENT_TIMESTAMP),  ---надо добавить проверку, чтобы deadline было больше, чем CURRENT_TIMESTAMP
+	deadline timestamp   not null check (deadline > CURRENT_TIMESTAMP),
 	header_ varchar(250) not null,
 	description varchar(650) not null,
-	price money not null check (price > 0::money),  -----тут случайно не надо not null? или работа может быть бесплатной?
-	hourly_rate money not null check (hourly_rate > 0::money)  ---тот же вопрос
+	price money not null check (price > 0::money),
+	hourly_rate money not null check (hourly_rate > 0::money)
 );
 
 
 create table application (
 	id serial not null primary key,
-	date_time timestamp not null default CURRENT_TIMESTAMP,   -----я бы тут добавила default CURRENT_TIMESTAMP,
-	deadline timestamp not null check (deadline > date_time),  ----и проверка на deadline>date_time,
+	date_time timestamp not null default CURRENT_TIMESTAMP,
+	deadline timestamp not null check (deadline > date_time),
 	price money not null,
 	description varchar(450) not null,
 

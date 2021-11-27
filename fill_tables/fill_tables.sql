@@ -470,19 +470,19 @@ insert into application (date_time, deadline, price, description, freelancer_id,
     ('2023-01-21', '2023-10-18', 1222::money, 'C++ разработчик. Имею опыт работы с высоконагруженными системами и решениями для видеосвязи.', 12, 9);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-02-01', '2023-05-16', 2679.56, '2 года опыта в сфере администрирования. Настрою всё по красоте)', 15, 13);
+    ('2023-02-01', '2023-05-16', 2679::money, '2 года опыта в сфере администрирования. Настрою всё по красоте)', 15, 13);
 
--- insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
---     ('2023-01-22', '2023-05-28', '$721.61');
---
--- insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
---     ('2023-01-06', '2023-07-02', '$775.86');
---
--- insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
---     ('2023-01-17', '2023-08-08', '$1229.15');
---
--- insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
---     ('2023-01-08', '2023-11-24', '$1277.25');
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-01-22', '2023-05-28', 721::money, 'Профессиональный IOS разработчик, более 6ти успешных выполненных проектов, много положительных отзывов', 11, 10);
+
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-01-06', '2023-07-02', 775::money, 'Активный и квалифицированный разработчик, хорошо работаю в команде, 1.5 года опыта как Full stack', 5, 4);
+
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-01-17', '2023-08-08', 229::money, 'Знаю HTML, CSS и JS. Готов решаить вашу пролему. Пишите, договоримся', 3, 2);
+
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-01-08', '2023-11-24', 1277::money, 'Ранее занимался разработкой API и имею достоаточную экспертизу. Предоставлю решение в кратчайшие сроки', 9, 5);
 
 
 
@@ -519,33 +519,6 @@ insert into message_ (date_time, is_from_customer, text_message, freelancer_id, 
 --
 -- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
 --     ('2022-03-28');
---
--- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
---     ('2022-02-28');
---
--- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
---     ('2022-04-18');
---
--- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
---     ('2022-08-22');
---
--- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
---     ('2022-01-03');
---
--- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
---     ('2022-05-30');
---
--- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
---     ('2022-01-01');
---
--- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
---     ('2022-02-18');
---
--- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
---     ('2022-05-09');
---
--- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
---     ('2022-02-04');
 
 
 ----FILL PROJECT_DONE----
