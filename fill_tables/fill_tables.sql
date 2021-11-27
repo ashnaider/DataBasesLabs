@@ -508,18 +508,6 @@ insert into message_ (date_time, is_from_customer, text_message, freelancer_id, 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
     ('2022-01-24', true, 'Добрый вечер, заинтересовала ваша заявка, когда сможете приступить к проекту?', 5, 13);
 
--- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
---     ('2022-07-22');
---
--- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
---     ('2022-11-08');
---
--- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
---     ('2022-10-31');
---
--- insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
---     ('2022-03-28');
-
 
 ----FILL PROJECT_DONE----
 insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
@@ -536,22 +524,7 @@ insert into project_done (date_start, date_finish, freelancer_id, customer_id, f
 
 insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
     values ('2023-03-19', '2023-08-25', 12, 9, 'Нормальный заказчик, но периодически не отвечает на смс', 'Назойливый и грубоватый разработчик, постоянно пишет');
---
--- insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
---     values ('2023-02-21', '2023-12-15', 0, 0, '', '');
---
--- insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
---     values ('2023-03-01', '2023-12-25', 0, 0, '', '');
---
--- insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
---     values ('2023-03-21', '2023-10-26', 0, 0, '', '');
---
--- insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
---     values ('2023-03-31', '2023-06-20', 0, 0, '', '');
---
--- insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
---     values ('2023-02-22', '2023-10-06', 0, 0, '', '');
---
+
 
 
 
@@ -581,18 +554,20 @@ insert into job_complaint (date_time, complaint_type, description, freelancer_id
 
 insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
     ('2023-07-26 11:51:47', 'other', 'Неадекватоне задание. Решение NP-полной задачи, вы серьезно?', 8, 15);
---
--- insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
---     ('2023-07-14 19:00:39', '', '', 0, 0);
---
--- insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
---     ('2023-07-31 05:33:16', '', '', 0, 0);
---
--- insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
---     ('2023-08-29 07:49:32', '', '', 0, 0);
---
--- insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
---     ('2023-11-26 23:01:40', '', '', 0, 0);
+
+insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
+    ('2023-07-14 19:00:39', 'spam', 'Реклама ставок, удалите объявление', 11, 16);
+
+insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
+    ('2023-07-31 05:33:16', 'spam', 'У вас там объявление с рекламой микрокредитов, примите меры', 7, 17);
+
+insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
+    ('2023-08-29 07:49:32', 'fraud', 'Заказчик, очевидно, занимается обманом людей с помощью онлайн казино, заблокируйте заказчика', 6, 19);
+
+insert into job_complaint (date_time, complaint_type, description, freelancer_id, job_id) values
+    ('2023-11-26 23:01:40', 'illegal_actions', 'Администрация, тут человек просит сделать копию сайта, ' ||
+                                               'и разместить на домене, похожим на оригинальный. ' ||
+                                               'Похоже на фишинговый сайт. Разберитесь, пожалуйста', 12, 20);
 
 
 
@@ -611,19 +586,3 @@ insert into user_complaint (date_time, is_from_customer, complaint_type, descrip
 
 insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
     values ('2023-10-04 23:25:52', false, 'spam', 'Исполнитель слишком навящивый, написывает о исполнении проекта, хотя я даже его не подтверждал', 2, 11);
---
--- insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
---     values ('2023-08-31 20:33:14', false, '', '', 0, 0);
---
--- insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
---     values ('2023-08-24 19:42:59', false, '', '', 0, 0);
---
--- insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
---     values ('2023-08-18 01:59:50', false, '', '', 0, 0);
---
--- insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
---     values ('2023-08-05 16:00:54', false, '', '', 0, 0);
---
--- insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
---     values ('2023-10-29 17:48:09', false, '', '', 0, 0);
-
