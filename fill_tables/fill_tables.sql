@@ -455,35 +455,40 @@ insert into new_job (customer_id, deadline, header_, description, price, hourly_
 
 -----FILL APPLICATION-----
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-02-04', '2023-07-15', 724::money, 'Есть большой опыт подобных решений, готов взяться сегодня!', 5, 7);
+    ('2023-02-04', '2023-07-15', money(724), 'Есть большой опыт подобных решений, готов взяться сегодня!', 5, 7);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-01-23', '2023-12-20', 2617::money, 'Профессионал с отличной экспертизой. Решу за неделю', 5, 3);
+    ('2023-01-23', '2023-12-20', money(350), 'Профессионал с отличной экспертизой. Решу за неделю', 5, 3);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-02-13', '2023-08-26', 539::money, 'Разработчик с опытом 4 года, качественно решу вашу задачу', 10, 12);
+    ('2023-02-13', '2023-08-26', money(539), 'Разработчик с опытом 4 года, качественно решу вашу задачу', 10, 12);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-02-03', '2023-09-17', 1113::money, 'Имею обширный опыт построения подобных систем, гарантирую качество и надёжность', 13, 8);
+    ('2023-02-03', '2023-09-17', money(1113), 'Имею обширный опыт построения подобных систем, гарантирую качество и надёжность', 13, 8);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-01-21', '2023-10-18', 1222::money, 'C++ разработчик. Имею опыт работы с высоконагруженными системами и решениями для видеосвязи.', 12, 9);
+    ('2023-01-21', '2023-10-18', money(1222), 'C++ разработчик. Имею опыт работы с высоконагруженными системами и решениями для видеосвязи.', 12, 9);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-02-01', '2023-05-16', 2679::money, '2 года опыта в сфере администрирования. Настрою всё по красоте)', 15, 13);
+    ('2023-02-01', '2023-05-16', money(400), '2 года опыта в сфере администрирования. Настрою всё по красоте)', 15, 13);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-01-22', '2023-05-28', 721::money, 'Профессиональный IOS разработчик, более 6ти успешных выполненных проектов, много положительных отзывов', 11, 10);
+    ('2023-01-22', '2023-05-28', money(721), 'Профессиональный IOS разработчик, более 6ти успешных выполненных проектов, много положительных отзывов', 11, 10);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-01-06', '2023-07-02', 775::money, 'Активный и квалифицированный разработчик, хорошо работаю в команде, 1.5 года опыта как Full stack', 5, 4);
+    ('2023-01-06', '2023-07-02', money(420), 'Активный и квалифицированный разработчик, хорошо работаю в команде, 1.5 года опыта как Full stack', 5, 4);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-01-17', '2023-08-08', 229::money, 'Знаю HTML, CSS и JS. Готов решаить вашу пролему. Пишите, договоримся', 3, 2);
+    ('2023-01-17', '2023-08-08', money(40), 'Знаю HTML, CSS и JS. Готов решаить вашу пролему. Пишите, договоримся', 3, 2);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-01-08', '2023-11-24', 1277::money, 'Ранее занимался разработкой API и имею достоаточную экспертизу. Предоставлю решение в кратчайшие сроки', 9, 5);
+    ('2023-01-08', '2023-11-24', money(51), 'Ранее занимался разработкой API и имею достоаточную экспертизу. Предоставлю решение в кратчайшие сроки', 9, 5);
 
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-02-04', '2023-07-15', money(175), 'Я фронтенд разработчик, хорошо знаю технологии, работу сделаю качественно', 4, 3);
+
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-01-23', '2023-12-20', money(2617), 'Фронтенд разработчик, разбираюсь в вопросе хорошо, сделаю быстро', 4, 7);
 
 
 ------FILL MESSAGE_ ------
