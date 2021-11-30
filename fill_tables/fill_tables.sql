@@ -494,10 +494,10 @@ insert into message_ (date_time, is_from_customer, text_message, freelancer_id, 
     ('2022-02-25 14:15:00-00', true, 'Здравствуйте, конечно! Есть сеть магазинов выпечки, нужно сделать сайт.', 4, 1);
 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-02-26 08:10:00-00', false, 'А какого типа сайт нужен, landing page? Сколько страниц должно быть', 4, 1);
+    ('2022-02-26 8:10:00-00', false, 'А какого типа сайт нужен, landing page? Сколько страниц должно быть', 4, 1);
 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-02-25 09:49:00-00', true, 'Страниц 5-6. Стандартные: главная, о нас, продукция, контакты и т.д.', 4, 1);
+    ('2022-02-26 9:49:00-00', true, 'Страниц 5-6. Стандартные: главная, о нас, продукция, контакты и т.д.', 4, 1);
 
 
 
@@ -505,19 +505,19 @@ insert into message_ (date_time, is_from_customer, text_message, freelancer_id, 
     ('2022-07-03 02:16:07-00', false, 'Добрый день, какой фреймворк используется на сайте?', 3, 2);
 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-07-03 02:18:08-00', true, 'Здравствуйте, мы используем vue.js', 3, 2);
+    ('2022-07-03 02:25:08-00', true, 'Здравствуйте, мы используем vue.js', 3, 2);
 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-07-03 02:18:15-00', false, 'Можете скинуть чёткое ТЗ и архив сайта?', 3, 2);
+    ('2022-07-03 02:59:15-00', false, 'Можете скинуть чёткое ТЗ и архив сайта?', 3, 2);
 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-07-03 02:18:19-00', true, 'Киньте вашу почту', 3, 2);
+    ('2022-07-03 03:18:19-00', true, 'Киньте вашу почту', 3, 2);
 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-07-03 02:18:35-00', false, 'вот моя почта: tmcgorley2@themeforest.net', 3, 2);
+    ('2022-07-03 04:01:35-00', false, 'вот моя почта: tmcgorley2@themeforest.net', 3, 2);
 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-07-03 02:19:01-00', true, 'Отправил, проверяйте, если будут вопросы, пишите', 3, 2);
+    ('2022-07-03 08:20:01-00', true, 'Отправил, проверяйте, если будут вопросы, пишите', 3, 2);
 
 
 

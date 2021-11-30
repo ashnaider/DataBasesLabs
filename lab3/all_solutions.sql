@@ -13,7 +13,9 @@ select  text_message,
 		header_, specialization
 
 		from message_ mess
-	inner join new_job on (mess.job_id = new_job.id and new_job.header_ = 'Создать кнопку + прогресс бар(нажал +10% нажал +20% нажал +50% и т.д)')
+	inner join new_job on (mess.job_id = new_job.id
+	                and new_job.header_ =  'Создать кнопку + прогресс бар(нажал +10% нажал +20% нажал +50% и т.д)'
+                          )
 	left join freelancer fr on mess.freelancer_id = fr.id
 	left join customer on customer.id = mess.job_id
     order by mess.date_time ASC;
