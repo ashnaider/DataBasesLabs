@@ -322,7 +322,7 @@ insert into customer (first_name, last_name, login, email, password_, organisati
 
 
 
------FILL CUSTOMER-----
+-----FILL NEW-JOB -----
 insert into new_job (customer_id, deadline, header_, description, price, hourly_rate)
     values
          (1, '2023-03-22 18:10:25-07',
@@ -331,7 +331,7 @@ insert into new_job (customer_id, deadline, header_, description, price, hourly_
                money(170), 2),
 
          (2, '2023-01-4 12:00:00-00',
-             'Создать кнопку + прогресс бар(нажал +10% нажал +20% нажал +50% и т.д) ',
+             'Создать кнопку + прогресс бар(нажал +10% нажал +20% нажал +50% и т.д)',
              'Нужно создать кнопку со ссылкой типо "поделиться". нажав на которую произойдет 2 вещи:' ||
              '1) Всплывет на к примеру VK (стандартная вещь как у всех) на том же яндексе кнопках' ||
              '2) Над кнопкой на прогресс баре появиться значение 10%',
@@ -350,7 +350,7 @@ insert into new_job (customer_id, deadline, header_, description, price, hourly_
                money(400), 3),
 
         (5, '2023-02-16 16:30:00-00',
-            'Восстановить работу Ebay API ',
+            'Восстановить работу Ebay API',
             ' Есть старый самописный модуль на PHP, лет 5 работавший с Ebay API shopping. После того как Ebay что-то сломал, модуль перестал работать и возвращает ошибку 1199, решения по которой не гуглятся.' ||
             'Задача — или восстановить работу этого модуля, или прикрутить библиотеку на ваш выбор.' ||
             'Все доступы-токены-пароли для Ebay есть.' ||
@@ -488,10 +488,38 @@ insert into application (date_time, deadline, price, description, freelancer_id,
 
 ------FILL MESSAGE_ ------
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-02-25 14:10:00-00', false, 'Здравствуйте, можете поподробнее рассказать о проблеме?', 3, 1);
+    ('2022-02-25 14:10:00-00', false, 'Здравствуйте, можете поподробнее рассказать о проблеме?', 4, 1);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2022-02-25 14:15:00-00', true, 'Здравствуйте, конечно! Есть сеть магазинов выпечки, нужно сделать сайт.', 4, 1);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2022-02-26 08:10:00-00', false, 'А какого типа сайт нужен, landing page? Сколько страниц должно быть', 4, 1);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2022-02-25 09:49:00-00', true, 'Страниц 5-6. Стандартные: главная, о нас, продукция, контакты и т.д.', 4, 1);
+
+
 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
     ('2022-07-03 02:16:07-00', false, 'Добрый день, какой фреймворк используется на сайте?', 3, 2);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2022-07-03 02:18:08-00', true, 'Здравствуйте, мы используем vue.js', 3, 2);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2022-07-03 02:18:15-00', false, 'Можете скинуть чёткое ТЗ и архив сайта?', 3, 2);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2022-07-03 02:18:19-00', true, 'Киньте вашу почту', 3, 2);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2022-07-03 02:18:35-00', false, 'вот моя почта: tmcgorley2@themeforest.net', 3, 2);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2022-07-03 02:19:01-00', true, 'Отправил, проверяйте, если будут вопросы, пишите', 3, 2);
+
+
 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
     ('2022-01-27 12:20:15-00', false, 'Добрый вечер, готов сделать за неделю.', 4, 3);
