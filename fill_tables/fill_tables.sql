@@ -77,7 +77,7 @@ insert into freelancer (first_name, last_name, email, login, password_, speciali
 insert into freelancer (first_name, last_name, email, login, password_, specialization) values ('Mill', 'Cruddas', 'mcruddas1@wired.com', 'mcruddas1', 'CBrm1TR45',
                                                                                                 'Data Analyst');
 
-insert into freelancer (first_name, last_name, email, login, password_, specialization) values ('Tuesday', 'McGorley', 'tmcgorley2@themeforest.net', 'tmcgorley2', '72VTsdf1S',
+insert into freelancer (first_name, last_name, email, login, password_, specialization) values ('Grigoriy', 'McGorley', 'tmcgorley2@themeforest.net', 'tmcgorley2', '72VTsdf1S',
                                                                                                 'Front-end developer');
 
 insert into freelancer (first_name, last_name, email, login, password_, specialization) values ('Ealasaid', 'Attewill', 'eattewill3@delicious.com', 'eattewill3', 'Us5HsyXHjtBr',
