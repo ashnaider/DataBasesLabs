@@ -116,6 +116,21 @@ insert into freelancer (first_name, last_name, email, login, password_, speciali
 insert into freelancer (first_name, last_name, email, login, password_, specialization) values ('Edvard', 'Swadlen', 'eswadlene@vistaprint.com', 'eswadlene', 'uWvg234VNI',
                                                                                                 'DevOps');
 
+insert into freelancer (first_name, last_name, email, login, password_, specialization) values ('Ivan', 'Djmichov', 'gmichovivan@gmail.com', 'ivangmych', '797IDrm234ZQb',
+                                                                                                'DevOps');
+
+insert into freelancer (first_name, last_name, email, login, password_, specialization) values ('Valentin', 'Bortnikov', 'bort_val@tmall.com', 'val_bortovich', '234euptGsdfP1',
+                                                                                                'DevOps');
+
+insert into freelancer (first_name, last_name, email, login, password_, specialization) values ('Nikolay', 'Serebryakov', 'kolya_serebro@gmail.com', 'kolya_serebro', 'utWvg234VN234I',
+                                                                                                'Java developer');
+
+insert into freelancer (first_name, last_name, email, login, password_, specialization) values ('Kostya', 'Merzlyaev', 'kostya_merz@gmail.com', 'kostya_merz3000', 'sdfj234KJFD',
+                                                                                                'Java developer');
+
+insert into freelancer (first_name, last_name, email, login, password_, specialization) values ('Misha', 'Lapotkin', 'lapot_misha@gmail.com', 'lapti_mishi_27', 'sldkfjl3245DSfu',
+                                                                                                'DevOps');
+
 ----FILL TECHNOLOGY STACK-----
 insert
     into technology_stack (freelancer_id, technology_id)
@@ -251,7 +266,57 @@ insert
             (15, 53),
             (15, 54),
             (15, 55),
-            (15, 56)
+            (15, 56),
+
+            (16, 1),
+            (16, 4),
+            (16, 8),
+            (16, 9),
+            (16, 19),
+            (16, 20),
+            (16, 51),
+            (16, 53),
+            (16, 56),
+
+            (17, 7),
+            (17, 4),
+            (17, 16),
+            (17, 15),
+            (17, 20),
+            (17, 51),
+            (17, 52),
+            (17, 55),
+            (17, 56),
+
+            (18, 1),
+            (18, 2),
+            (18, 3),
+            (18, 15),
+            (18, 20),
+            (18, 51),
+            (18, 52),
+            (18, 56),
+
+            (19, 33),
+            (19, 38),
+            (19, 4),
+            (19, 48),
+            (19, 51),
+            (19, 52),
+            (19, 53),
+            (19, 55),
+            (19, 56),
+
+            (20, 1),
+            (20, 39),
+            (20, 14),
+            (20, 15),
+            (20, 4),
+            (20, 20),
+            (20, 51),
+            (20, 53),
+            (20, 54),
+            (20, 56)
 ;
 
 
@@ -455,40 +520,62 @@ insert into new_job (customer_id, deadline, header_, description, price, hourly_
 
 -----FILL APPLICATION-----
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-02-04', '2023-07-15', money(724), 'Есть большой опыт подобных решений, готов взяться сегодня!', 5, 7);
+    ('2023-02-04 14:15:27-00', '2023-07-15', money(724), 'Есть большой опыт подобных решений, готов взяться сегодня!', 5, 7);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-01-23', '2023-12-20', money(350), 'Профессионал с отличной экспертизой. Решу за неделю', 5, 3);
+    ('2023-01-23 12:10:00-00', '2023-12-20', money(350), 'Профессионал с отличной экспертизой. Решу за неделю', 5, 3);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-02-13', '2023-08-26', money(539), 'Разработчик с опытом 4 года, качественно решу вашу задачу', 10, 12);
+    ('2023-02-13 19:19:03-00', '2023-08-26', money(539), 'Разработчик с опытом 4 года, качественно решу вашу задачу', 10, 12);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-02-03', '2023-09-17', money(1113), 'Имею обширный опыт построения подобных систем, гарантирую качество и надёжность', 13, 8);
+    ('2023-02-03 07:09:49-00', '2023-09-17', money(1113), 'Имею обширный опыт построения подобных систем, гарантирую качество и надёжность', 13, 8);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-01-21', '2023-10-18', money(1222), 'C++ разработчик. Имею опыт работы с высоконагруженными системами и решениями для видеосвязи.', 12, 9);
+    ('2023-01-21 12:18:00-00', '2023-10-18', money(1222), 'C++ разработчик. Имею опыт работы с высоконагруженными системами и решениями для видеосвязи.', 12, 9);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-02-01', '2023-05-16', money(400), '2 года опыта в сфере администрирования. Настрою всё по красоте)', 15, 13);
+    ('2023-02-01 14:20:07-00', '2023-05-16', money(400), '2 года опыта в сфере администрирования. Настрою всё по красоте)', 15, 13);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-01-22', '2023-05-28', money(721), 'Профессиональный IOS разработчик, более 6ти успешных выполненных проектов, много положительных отзывов', 11, 10);
+    ('2023-01-22 05:34:29-00', '2023-05-28', money(721), 'Профессиональный IOS разработчик, более 6ти успешных выполненных проектов, много положительных отзывов. Имею сертификат курсов по настройке облачных сервисов', 11, 10);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-01-06', '2023-07-02', money(420), 'Активный и квалифицированный разработчик, хорошо работаю в команде, 1.5 года опыта как Full stack', 5, 4);
+    ('2023-01-06 20:01:36-00', '2023-07-02', money(420), 'Активный и квалифицированный разработчик, хорошо работаю в команде, 1.5 года опыта как Full stack', 5, 4);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-01-17', '2023-08-08', money(40), 'Знаю HTML, CSS и JS. Готов решаить вашу пролему. Пишите, договоримся', 3, 2);
+    ('2023-01-17 18:52:23-00', '2023-08-08', money(40), 'Знаю HTML, CSS и JS. Готов решить вашу пролему. Пишите, договоримся', 3, 2);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-01-08', '2023-11-24', money(51), 'Ранее занимался разработкой API и имею достоаточную экспертизу. Предоставлю решение в кратчайшие сроки', 9, 5);
+    ('2023-01-08 13:31:13-00', '2023-11-24', money(51), 'Ранее занимался разработкой API и имею достоаточную экспертизу. Предоставлю решение в кратчайшие сроки', 9, 5);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-02-04', '2023-07-15', money(175), 'Я фронтенд разработчик, хорошо знаю технологии, работу сделаю качественно', 4, 3);
+    ('2023-02-04 19:23:59-00', '2023-07-15', money(175), 'Я фронтенд разработчик, хорошо знаю технологии, работу сделаю качественно', 4, 3);
 
 insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
-    ('2023-01-23', '2023-12-20', money(2617), 'Фронтенд разработчик, разбираюсь в вопросе хорошо, сделаю быстро', 4, 7);
+    ('2023-01-23 15:23:46-00', '2023-12-20', money(2617), 'Фронтенд разработчик, разбираюсь в вопросе хорошо, сделаю быстро', 4, 7);
+
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-01-15 10:34:42-00', '2023-02-15', money(165), 'Есть опыт создания подобных сервисов. Могу разместить сайт на облачных серверах',
+     19, 3);
+
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-01-02 17:23:19-00', '2023-01-15', money(225), 'Имею общирный опыт разработчки решений, основанных на облачных сервисах. Владею docker',
+     18, 13);
+
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-01-20 11:28:09-00', '2023-03-02', money(53), 'Долго работал с настройкой облачных технологий для государственных сервисов. Займусь вашей проблемой',
+     17, 5);
+
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-01-15 08:34:38-00', '2023-02-28', money(180), 'Помогу решить вашу задачу, если что, могу прикрутить облачное хранилище или другие сервисы',
+     16, 13);
+
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-01-13 18:51:06-00', '2023-03-03', money(196), 'Эксперт в области облачных сервисов. Быстро и качественно помогу вам с вашей задачей',
+     20, 13);
+
+
 
 
 ------FILL MESSAGE_ ------

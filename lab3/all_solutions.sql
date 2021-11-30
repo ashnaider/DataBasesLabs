@@ -22,6 +22,41 @@ select  text_message,
 
 
 
+
+
+
+-- 9. Получить список фрилансеров, имеющих одинаковые специализации,
+-- в описании которых присутствуют слова «облачн(ый|ых|ое)» и «сервис(ы|ов)».
+
+SELECT fr_1.first_name,
+       fr_1.specialization,
+       DENSE_RANK() OVER (ORDER BY fr_1.specialization) AS dense_rank,
+       fr_2.spec_count,
+       app.description
+
+FROM freelancer AS fr_1
+INNER JOIN
+(
+    SELECT specialization, COUNT(*) AS spec_count
+    FROM freelancer
+	RIGHT JOIN application AS app ON app.freelancer_id = freelancer.id
+          WHERE (app.description SIMILAR TO '%облачн(ый|ых|ое)%') AND
+			  	(app.description SIMILAR TO '%сервис(ы|ов|ах)%')
+    GROUP BY specialization
+) fr_2
+ON fr_1.specialization = fr_2.specialization
+
+    RIGHT JOIN application AS app ON app.freelancer_id = fr_1.id
+	WHERE (app.description SIMILAR TO '%облачн(ый|ых|ое)%') AND
+	      (app.description SIMILAR TO '%сервис(ы|ов|ах)%') AND
+	      spec_count > 1
+
+ORDER BY dense_rank;
+
+
+
+
+
 -- 10.  Получить информацию об объявлениях, по которым стоимость выполнения работы,
 -- указанная заказчиком, отличается от стоимости выполнения работы, указанной фрилансером,
 -- в меньшую сторону более чем на 10%.
