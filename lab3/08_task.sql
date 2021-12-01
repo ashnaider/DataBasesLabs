@@ -18,18 +18,43 @@ $$ language plpgsql;
 
 
 
-select
-       customer.id as customer_id,
+
+SELECT
+       customer_id,
        first_name,
-       posted::timestamp::date,
-       MY_CURR_DATE() as curr_date,
-       age( MY_CURR_DATE(), posted) as date_diff,
+       count_cust_jobs,
+       DENSE_RANK() OVER (ORDER BY nj.customer_id),
+       posted::TIMESTAMP::DATE,
+       MY_CURR_DATE() AS curr_date,
+       age( MY_CURR_DATE(), posted) AS date_diff,
        header_,
        price,
        deadline
-from
-customer inner join new_job on customer.id = new_job.customer_id
-where age(MY_CURR_DATE(), posted)::interval  < '1 month'::interval
-  and posted < MY_CURR_DATE()
-  and price::numeric < 400
+
+FROM new_job nj
+
+RIGHT JOIN (
+    SELECT
+           c_2.id AS cust_id,
+           count(*) AS count_cust_jobs
+
+    FROM customer c_2
+        INNER JOIN new_job nj_2
+            ON c_2.id = nj_2.customer_id
+
+    WHERE age(MY_CURR_DATE(), posted)::INTERVAL  < '1 month'::INTERVAL
+      AND posted < MY_CURR_DATE()
+      AND price::NUMERIC < 400
+
+    GROUP BY c_2.id
+) AS b
+    ON nj.customer_id = b.cust_id
+
+LEFT JOIN customer ON customer.id = nj.customer_id
+
+WHERE age(MY_CURR_DATE(), posted)::INTERVAL  < '1 month'::INTERVAL
+  AND posted < MY_CURR_DATE()
+  AND price::NUMERIC < 400
+  AND count_cust_jobs > 1
 ;
+
