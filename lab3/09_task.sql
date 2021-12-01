@@ -13,7 +13,6 @@ select first_name || ' ' || last_name as full_name,
 
 
 ------------SOLUTION!!!-----------------
-
 SELECT fr_1.first_name,
        fr_1.specialization,
        DENSE_RANK() OVER (ORDER BY fr_1.specialization) AS dense_rank,

@@ -2,9 +2,6 @@
 -- наступает позже, чем дедлайн, установленный фрилансером.
 
 
-CURR_DATE constant date := '2023-01-03';
-
-
 select app.id, nj.deadline as customer_deadline,
        app.deadline as freelancer_deadline,
        nj.price as customer_price,

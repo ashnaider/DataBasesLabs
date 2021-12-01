@@ -1,3 +1,4 @@
+drop function if exists GetAuthorOfMessage;
 drop table technology_stack;
 drop table technology;
 
@@ -88,6 +89,7 @@ create table new_job (
 		references customer(id)
 		on delete restrict on update cascade,
 
+    posted timestamp not null check (posted >= CURRENT_TIMESTAMP),
 	deadline timestamp   not null check (deadline > CURRENT_TIMESTAMP),
 	header_ varchar(250) not null,
 	description varchar(650) not null,
