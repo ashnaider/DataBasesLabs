@@ -605,6 +605,14 @@ insert into application (date_time, deadline, price, description, freelancer_id,
     ('2023-01-13 18:51:06-00', '2023-03-03', money(196), 'Эксперт в области облачных сервисов. Быстро и качественно помогу вам с вашей задачей',
      20, 13);
 
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-01-10 17:31:06-00', '2023-03-10', money(280), 'Отлично разбираюсь в тильда, сделаю шикарный лендинг',
+     3, 23);
+
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-01-02 12:13:09-00', '2023-03-29', money(450), 'Делал много андроид приложений, быстро реализую любые пожелания',
+     10, 25);
+
 
 
 
@@ -663,21 +671,26 @@ insert into message_ (date_time, is_from_customer, text_message, freelancer_id, 
 
 
 ----FILL PROJECT_DONE----
-insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
-    values ('2023-02-21', '2023-11-21', 5, 7, 'Приятный человек, поставляет хорошие ТЗ', 'Профессионал своего дела');
+insert into project_done (date_start, date_finish, freelancer_id, job_id, freelancer_review, customer_review)
+    values ('2023-02-21', '2023-11-21', 5, 3, 'Приятный человек, поставляет хорошие ТЗ', 'Профессионал своего дела');
 
-insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
-    values ('2023-03-13', '2023-07-13', 5, 3, 'Ответственный заказчик, своевременная оплата', 'Исполнительный и старательный разработчик');
+insert into project_done (date_start, date_finish, freelancer_id, job_id, freelancer_review, customer_review)
+    values ('2023-01-12', '2023-07-13', 5, 4, 'Ответственный заказчик, своевременная оплата', 'Исполнительный и старательный разработчик');
 
-insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
+insert into project_done (date_start, date_finish, freelancer_id, job_id, freelancer_review, customer_review)
     values ('2023-02-22', '2023-11-20', 10, 12, 'Хороший человек, спокойно объясняет правки', 'Медлительный но внимательный специалист');
 
-insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
+insert into project_done (date_start, date_finish, freelancer_id, job_id, freelancer_review, customer_review)
     values ('2023-04-01', '2023-06-29', 13, 8, 'Безответственный заказчик, постоянно куда-то пропадает', 'Непунктуальный разработчик, не соблюдает тайминги');
 
-insert into project_done (date_start, date_finish, freelancer_id, customer_id, freelancer_review, customer_review)
+insert into project_done (date_start, date_finish, freelancer_id, job_id, freelancer_review, customer_review)
     values ('2023-03-19', '2023-08-25', 12, 9, 'Нормальный заказчик, но периодически не отвечает на смс', 'Назойливый и грубоватый разработчик, постоянно пишет');
 
+insert into project_done (date_start, date_finish, freelancer_id, job_id, freelancer_review, customer_review)
+    values ('2023-01-20', '2023-02-20', 3, 23, 'Приятный заказчик, профессионал своего дела', 'Трудолбивый и старательный исполнитель');
+
+insert into project_done (date_start, date_finish, freelancer_id, job_id, freelancer_review, customer_review)
+    values ('2023-01-09', '2023-02-20', 10, 25, 'Приятный заказчик, профессионал своего дела', 'Трудолбивый и старательный исполнитель');
 
 
 

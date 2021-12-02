@@ -94,7 +94,8 @@ create table new_job (
 	header_ varchar(250) not null,
 	description varchar(650) not null,
 	price money not null check (price > 0::money),
-	hourly_rate money not null check (hourly_rate > 0::money)
+	hourly_rate money not null check (hourly_rate > 0::money),
+	is_done bool default false
 );
 
 
@@ -177,6 +178,7 @@ create table message_ (
 		on delete restrict on update cascade
 );
 
+
 create table project_done (
 	id serial not null primary key,
 	date_start timestamp not null,
@@ -189,8 +191,8 @@ create table project_done (
 		references freelancer(id)
 		on delete restrict on update cascade,
 
-	customer_id int not null
-		references customer(id)
+	job_id int not null
+		references new_job(id)
 		on delete restrict on update cascade
 );
 
