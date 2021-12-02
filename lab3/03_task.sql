@@ -10,7 +10,8 @@ select distinct
     fr.specialization,
     job_done
     ,
-    tech_t.t_name
+    tech_t_first.t_name,
+    tech_t_second.t_name
 from freelancer as fr
 right join
 (
@@ -20,10 +21,17 @@ right join
         having count(freelancer_id) between 3 and 10
 ) as jobs_done on freelancer_id = fr.id
 
-left join
+inner join
 (
     select freelancer_id as fr_id, tech.tech_name as t_name from technology_stack as t_st
     left join technology as tech on tech.id = t_st.technology_id
-    where tech.tech_name = 'HTML' or tech.tech_name = 'CSS'
-) as tech_t on tech_t.fr_id = fr.id
+    where tech.tech_name = 'HTML'
+) as tech_t_first on tech_t_first.fr_id = fr.id
+
+inner join
+(
+    select freelancer_id as fr_id, tech.tech_name as t_name from technology_stack as t_st
+    left join technology as tech on tech.id = t_st.technology_id
+    where tech.tech_name = 'CSS'
+) as tech_t_second on tech_t_second.fr_id = fr.id
 ;
