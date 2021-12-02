@@ -610,53 +610,56 @@ insert into application (date_time, deadline, price, description, freelancer_id,
 
 ------FILL MESSAGE_ ------
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-02-25 14:10:00-00', false, 'Здравствуйте, можете поподробнее рассказать о проблеме?', 4, 1);
+    ('2023-01-25 14:10:00-00', false, 'Здравствуйте, можете поподробнее рассказать о проблеме?', 4, 1);
 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-02-25 14:15:00-00', true, 'Здравствуйте, конечно! Есть сеть магазинов выпечки, нужно сделать сайт.', 4, 1);
+    ('2022-01-25 14:15:00-00', true, 'Здравствуйте, конечно! Есть сеть магазинов выпечки, нужно сделать сайт.', 4, 1);
 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-02-26 8:10:00-00', false, 'А какого типа сайт нужен, landing page? Сколько страниц должно быть', 4, 1);
+    ('2023-01-26 8:10:00-00', false, 'А какого типа сайт нужен, landing page? Сколько страниц должно быть', 4, 1);
 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-02-26 9:49:00-00', true, 'Страниц 5-6. Стандартные: главная, о нас, продукция, контакты и т.д.', 4, 1);
-
-
-
-insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-07-03 02:16:07-00', false, 'Добрый день, какой фреймворк используется на сайте?', 3, 2);
-
-insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-07-03 02:25:08-00', true, 'Здравствуйте, мы используем vue.js', 3, 2);
-
-insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-07-03 02:59:15-00', false, 'Можете скинуть чёткое ТЗ и архив сайта?', 3, 2);
-
-insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-07-03 03:18:19-00', true, 'Киньте вашу почту', 3, 2);
-
-insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-07-03 04:01:35-00', false, 'вот моя почта: tmcgorley2@themeforest.net', 3, 2);
-
-insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-07-03 08:20:01-00', true, 'Отправил, проверяйте, если будут вопросы, пишите', 3, 2);
+    ('2023-01-26 9:49:00-00', true, 'Страниц 5-6. Стандартные: главная, о нас, продукция, контакты и т.д.', 4, 1);
 
 
 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-01-27 12:20:15-00', false, 'Добрый вечер, готов сделать за неделю.', 4, 3);
+    ('2023-02-03 02:16:07-00', false, 'Добрый день, какой фреймворк используется на сайте?', 3, 2);
 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-12-09', false, 'Здравствуйте, в каком формате дизайн и на каком фреймворке готов прототип?', 10, 10);
+    ('2023-02-03 02:25:08-00', true, 'Здравствуйте, мы используем vue.js', 3, 2);
 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-05-06', false, 'Добрый день, какие требования к модели и какие данные есть?', 7, 14);
+    ('2023-02-03 02:59:15-00', false, 'Можете скинуть чёткое ТЗ и архив сайта?', 3, 2);
 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-01-12', false, 'Здравствуйте, готов приступить к разработке IOS приложения. Можете выслать ТЗ?', 11, 10);
+    ('2023-02-03 03:18:19-00', true, 'Киньте вашу почту', 3, 2);
 
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
-    ('2022-01-24', true, 'Добрый вечер, заинтересовала ваша заявка, когда сможете приступить к проекту?', 5, 13);
+    ('2023-02-03 04:01:35-00', false, 'вот моя почта: tmcgorley2@themeforest.net', 3, 2);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2023-02-03 08:20:01-00', true, 'Отправил, проверяйте, если будут вопросы, пишите', 3, 2);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2023-02-03 12:41:15-00', false, 'Это финальная версия, или будут вноситься правки?', 3, 2);
+
+
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2023-02-23 12:20:15-00', false, 'Добрый вечер, готов сделать за неделю.', 4, 3);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2023-02-24 13:40:15-00', false, 'Здравствуйте, в каком формате дизайн и на каком фреймворке готов прототип?', 10, 10);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2023-02-25 02:30:45-00', false, 'Добрый день, какие требования к модели и какие данные есть?', 7, 14);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2023-02-26 18:00:15-00', false, 'Здравствуйте, готов приступить к разработке IOS приложения. Можете выслать ТЗ?', 11, 10);
+
+insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
+    ('2023-02-27 12:20:01-00', true, 'Добрый вечер, заинтересовала ваша заявка, когда сможете приступить к проекту?', 5, 13);
 
 
 ----FILL PROJECT_DONE----
