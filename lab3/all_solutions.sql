@@ -22,6 +22,33 @@ select  text_message,
 
 
 
+-- 2. Получить информацию о жалобах определенного типа,
+-- поступивших от конкретного заказчика за последнюю неделю.
+
+create or replace function MY_CURR_DATE () returns date
+as $$
+    begin
+        return '2023-01-08 23:59:59-00'::date;
+    end;
+$$ language plpgsql;
+
+
+select *
+from customer
+left join user_complaint uc on customer.id = uc.customer_id
+where age(MY_CURR_DATE(), uc.date_time) < '7 day'::interval
+    and MY_CURR_DATE() > uc.date_time
+    and uc.is_from_customer = true
+    and uc.complaint_type in (
+                              'spam',
+--                               'fraud',
+                             'inappropriate_content'
+                             )
+;
+
+
+
+
 --
 -- 3. Получить информацию о фрилансерах (расположив их имена в алфавитном порядке),
 -- которые владеют двумя указанными (по усмотрению студента) технологиями и успешно выполнили от 3 до 10 работ.
@@ -57,6 +84,7 @@ inner join
     left join technology as tech on tech.id = t_st.technology_id
     where tech.tech_name = 'CSS'
 ) as tech_t_second on tech_t_second.fr_id = fr.id
+order by full_name
 ;
 
 

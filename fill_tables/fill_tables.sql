@@ -762,16 +762,25 @@ insert into job_complaint (date_time, complaint_type, description, freelancer_id
 
 ----FILL USER_COMPLAINT-----
 insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
-    values ('2023-07-23 06:44:36', false, 'fraud', 'Человек обманывает и кидает людей. На звонки и смс не отвечает', 4, 9);
+    values ('2023-02-02 06:44:36', false, 'fraud', 'Человек обманывает и кидает людей. На звонки и смс не отвечает', 4, 9);
 
 insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
-    values ('2023-06-25 20:04:51', false, 'spam', 'Заказчик неадекватный, требует выполнить работу за копейки, хотя я даже не подавал заявку', 8, 2);
+    values ('2023-03-04 20:04:51', false, 'spam', 'Заказчик неадекватный, требует выполнить работу за копейки, хотя я даже не подавал заявку', 8, 2);
 
 insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
-    values ('2023-05-15 18:41:19', false, 'illegal_actions', 'Заказчик предлагает провести оплату окольными путями, в обход налогов', 10, 5);
+    values ('2023-01-03 18:41:19', false, 'illegal_actions', 'Заказчик предлагает провести оплату окольными путями, в обход налогов', 10, 5);
 
 insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
-    values ('2023-11-24 17:49:14', false, 'inappropriate_content', 'У исполнителя неприемливое фото на аватарке и странный ник', 1, 4);
+    values ('2023-01-07 17:49:14', true, 'inappropriate_content', 'У исполнителя неприемливое фото на аватарке и странный ник', 1, 4);
 
 insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
-    values ('2023-10-04 23:25:52', false, 'spam', 'Исполнитель слишком навящивый, написывает о исполнении проекта, хотя я даже его не подтверждал', 2, 11);
+    values ('2023-01-01 23:25:52', true, 'spam', 'Исполнитель слишком навящивый, написывает о исполнении проекта, хотя я даже его не подтверждал', 2, 11);
+
+insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
+    values ('2023-01-03 15:02:06', true, 'spam', 'Человек просто неадекватный, не умеет общаться с людьми', 10, 18);
+
+insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
+    values ('2023-01-06 06:12:51', true, 'spam', 'Исполнитель флудит', 1, 9);
+
+insert into user_complaint (date_time, is_from_customer, complaint_type, description, customer_id, freelancer_id)
+    values ('2023-01-06 06:12:51', true, 'fraud', 'Присылает на e-mail фишинговые ссылки', 7, 8);

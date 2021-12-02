@@ -34,4 +34,5 @@ inner join
     left join technology as tech on tech.id = t_st.technology_id
     where tech.tech_name = 'CSS'
 ) as tech_t_second on tech_t_second.fr_id = fr.id
+order by full_name
 ;
