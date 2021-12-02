@@ -33,9 +33,16 @@ as $$
 $$ language plpgsql;
 
 
-select *
-from customer
-left join user_complaint uc on customer.id = uc.customer_id
+select
+    cust.first_name || ' ' || cust.last_name,
+    cust.id,
+    cust.email,
+    uc.is_from_customer,
+    uc.complaint_type,
+    uc.date_time,
+    uc.description
+from customer as cust
+left join user_complaint uc on cust.id = uc.customer_id
 where age(MY_CURR_DATE(), uc.date_time) < '7 day'::interval
     and MY_CURR_DATE() > uc.date_time
     and uc.is_from_customer = true
@@ -45,6 +52,7 @@ where age(MY_CURR_DATE(), uc.date_time) < '7 day'::interval
                              'inappropriate_content'
                              )
 ;
+
 
 
 
