@@ -7,10 +7,12 @@ select
     customer.first_name,
     customer.id,
     customer.organisation_name,
-    avg_price
+    avg_price,
+    jobs_done
+
 from customer
          right join (
-    select avg(new_job.price::numeric)::money as avg_price, customer_id as cust_id
+    select count(*) as jobs_done, avg(new_job.price::numeric)::money as avg_price, customer_id as cust_id
     from project_done
     left join new_job
         on project_done.job_id = new_job.id

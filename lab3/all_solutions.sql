@@ -22,6 +22,28 @@ select  text_message,
 
 
 
+--
+-- 5. По каждому заказчику получить информацию о средней стоимости успешно выполненных для него работ.
+--
+
+select
+    customer.first_name,
+    customer.id,
+    customer.organisation_name,
+    avg_price,
+    jobs_done
+
+from customer
+         right join (
+    select count(*) as jobs_done, avg(new_job.price::numeric)::money as avg_price, customer_id as cust_id
+    from project_done
+    left join new_job
+        on project_done.job_id = new_job.id
+    group by new_job.customer_id
+) as avg_prices on customer.id = avg_prices.cust_id
+;
+
+
 
 --
 -- 6. Получить информацию о трех самых дорогих работах, дедлайн для которых наступит на протяжении следующего месяца.
