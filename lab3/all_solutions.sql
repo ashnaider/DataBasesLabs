@@ -23,6 +23,85 @@ select  text_message,
 
 
 --
+-- 3. Получить информацию о фрилансерах (расположив их имена в алфавитном порядке),
+-- которые владеют двумя указанными (по усмотрению студента) технологиями и успешно выполнили от 3 до 10 работ.
+
+select distinct
+    fr.first_name || ' ' || fr.last_name as full_name,
+    fr.id,
+    fr.email,
+    fr.specialization,
+    job_done
+    ,
+    tech_t.t_name
+from freelancer as fr
+right join
+(
+        select count(*) as job_done, freelancer_id
+        from project_done
+        group by project_done.freelancer_id
+        having count(freelancer_id) between 3 and 10
+) as jobs_done on freelancer_id = fr.id
+
+left join
+(
+    select freelancer_id as fr_id, tech.tech_name as t_name from technology_stack as t_st
+    left join technology as tech on tech.id = t_st.technology_id
+    where tech.tech_name = 'HTML' or tech.tech_name = 'CSS'
+) as tech_t on tech_t.fr_id = fr.id
+;
+
+
+
+-- 4. Получить информацию обо всех фрилансерах и количестве сообщений, отправленных ими на протяжении
+-- последних трех месяцев (даты должны определяться автоматически, в зависимости от момента выполнения запроса).
+--
+
+create or replace function MY_CURR_DATE () returns date
+as $$
+    begin
+        return '2023-03-01 23:59:59-00'::date;
+    end;
+$$ language plpgsql;
+
+
+select
+       fr.first_name || ' ' || fr.last_name as full_name,
+       b.freelancer_id,
+       fr.specialization,
+       fr_messages_count,
+       message_.date_time,
+       message_.text_message,
+       new_job.description
+from
+     freelancer as fr
+right join
+(
+    select count(*) as fr_messages_count, freelancer_id
+    from message_
+    where age(MY_CURR_DATE(), message_.date_time)::interval < '3 month'::interval
+      and  MY_CURR_DATE() > message_.date_time
+      and  message_.is_from_customer = false
+    group by message_.freelancer_id
+
+) as b on b.freelancer_id = fr.id
+
+left join
+    message_
+on
+    message_.freelancer_id = fr.id
+
+left join
+    new_job
+on
+    message_.job_id = new_job.id
+where
+      message_.is_from_customer = false
+order by freelancer_id;
+
+
+
+--
 -- 5. По каждому заказчику получить информацию о средней стоимости успешно выполненных для него работ.
 --
 

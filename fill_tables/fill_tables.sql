@@ -621,6 +621,10 @@ insert into application (date_time, deadline, price, description, freelancer_id,
     ('2023-01-02 12:13:09-00', '2023-03-29', money(450), 'Обширный опыт разработки на Python, в совершенстве владею API',
      1, 22);
 
+insert into application (date_time, deadline, price, description, freelancer_id, job_id) values
+    ('2023-01-18 19:27:00-00', '2023-04-25', money(450), 'Android разработчк с большим опытом. Работал как в стартапе так и в корпорации. Работаю быстро',
+     10, 6);
+
 
 ------FILL MESSAGE_ ------
 insert into message_ (date_time, is_from_customer, text_message, freelancer_id, job_id) values
@@ -706,6 +710,9 @@ insert into project_done (date_start, date_finish, freelancer_id, job_id, freela
 
 insert into project_done (date_start, date_finish, freelancer_id, job_id, freelancer_review, customer_review)
     values ('2023-01-25', '2023-05-26', 1, 22, 'Всегда занятой и нервный, но платит нормально', 'Хороший исполнитель');
+
+insert into project_done (date_start, date_finish, freelancer_id, job_id, freelancer_review, customer_review)
+    values ('2023-01-23', '2023-05-01', 10, 6, 'Спокойный и адекватный заказчик, хорошо объясняет требования', 'Профессиональный разработчк, решает всё в срок и экономит бюджет');
 
 
 
