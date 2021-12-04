@@ -31,8 +31,8 @@ select new_job.id,
 
     from new_job
 	inner join application app on new_job.id = app.job_id
-    left join customer on customer.id = new_job.customer_id
-    left join freelancer fr on fr.id = app.freelancer_id
+    inner join customer on customer.id = new_job.customer_id
+    inner join freelancer fr on fr.id = app.freelancer_id
 	where (app.price::numeric / new_job.price::numeric > 1.1)
 	order by new_job.price asc;
 

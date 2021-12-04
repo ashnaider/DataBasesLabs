@@ -8,5 +8,5 @@ select app.id, nj.deadline as customer_deadline,
        app.price as freelancer_price,
        app.description
 from application as app
-left join new_job as nj on nj.id = app.job_id
+inner join new_job as nj on nj.id = app.job_id
 where app.deadline < nj.deadline;

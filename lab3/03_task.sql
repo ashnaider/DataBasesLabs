@@ -3,6 +3,46 @@
 -- которые владеют двумя указанными (по усмотрению студента) технологиями и успешно выполнили от 3 до 10 работ.
 
 
+select
+fr.id,
+fr.first_name || ' ' || fr.last_name as full_name,
+fr.specialization,
+fr.email,
+tech.tech_name as first_tech,
+tech_2.tech_name as second_tech
+
+from freelancer as fr
+
+inner join technology_stack as t_st_l on fr.id = t_st_l.freelancer_id
+
+inner join technology_stack as t_st_r on fr.id = t_st_r.freelancer_id
+
+inner join technology as tech on t_st_l.technology_id = tech.id
+
+inner join technology as tech_2 on t_st_r.technology_id = tech_2.id
+
+inner join project_done as pd on fr.id = pd.freelancer_id
+
+where tech.tech_name = 'HTML' and tech_2.tech_name = 'CSS'
+
+group by (  fr.id,
+		    fr.first_name || ' ' || fr.last_name,
+			fr.specialization,
+		  	fr.email,
+			tech.tech_name,
+			tech_2.tech_name)
+
+having (count(pd.id) >= 3)
+order by full_name
+;
+
+
+
+--
+-- 3. Получить информацию о фрилансерах (расположив их имена в алфавитном порядке),
+-- которые владеют двумя указанными (по усмотрению студента) технологиями и успешно выполнили от 3 до 10 работ.
+
+
 select distinct
     fr.first_name || ' ' || fr.last_name as full_name,
     fr.id,
@@ -36,3 +76,8 @@ inner join
 ) as tech_t_second on tech_t_second.fr_id = fr.id
 order by full_name
 ;
+
+
+
+
+

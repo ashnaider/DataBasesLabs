@@ -7,18 +7,17 @@
 
 select  text_message,
 		case
-			when is_from_customer = True then customer.first_name || ' ' || customer.last_name
-			when is_from_customer = False then fr.first_name || ' ' || fr.last_name
+			when is_from_customer = True then customer.first_name
+			when is_from_customer = False then fr.first_name
 		end as author_name,
 		header_, specialization
 
 		from message_ mess
-	inner join new_job on (mess.job_id = new_job.id
-	                and new_job.header_ =  'Создать кнопку + прогресс бар(нажал +10% нажал +20% нажал +50% и т.д)'
-                          )
-	left join freelancer fr on mess.freelancer_id = fr.id
-	left join customer on customer.id = mess.job_id
+	inner join new_job on (mess.job_id = new_job.id and new_job.header_ = 'Создать кнопку + прогресс бар(нажал +10% нажал +20% нажал +50% и т.д)')
+	inner join freelancer fr on mess.freelancer_id = fr.id
+	inner join customer on customer.id = new_job.customer_id
     order by mess.date_time ASC;
+
 
 
 
@@ -51,8 +50,8 @@ where age(MY_CURR_DATE(), uc.date_time) < '7 day'::interval
 --                               'fraud',
                              'inappropriate_content'
                              )
+order by customer_id
 ;
-
 
 
 
@@ -61,40 +60,38 @@ where age(MY_CURR_DATE(), uc.date_time) < '7 day'::interval
 -- 3. Получить информацию о фрилансерах (расположив их имена в алфавитном порядке),
 -- которые владеют двумя указанными (по усмотрению студента) технологиями и успешно выполнили от 3 до 10 работ.
 
-select distinct
-    fr.first_name || ' ' || fr.last_name as full_name,
-    fr.id,
-    fr.email,
-    fr.specialization,
-    job_done
-    ,
-    tech_t_first.t_name,
-    tech_t_second.t_name
+select
+fr.id,
+fr.first_name || ' ' || fr.last_name as full_name,
+fr.specialization,
+fr.email,
+tech.tech_name as first_tech,
+tech_2.tech_name as second_tech
+
 from freelancer as fr
-right join
-(
-        select count(*) as job_done, freelancer_id
-        from project_done
-        group by project_done.freelancer_id
-        having count(freelancer_id) between 3 and 10
-) as jobs_done on freelancer_id = fr.id
 
-inner join
-(
-    select freelancer_id as fr_id, tech.tech_name as t_name from technology_stack as t_st
-    left join technology as tech on tech.id = t_st.technology_id
-    where tech.tech_name = 'HTML'
-) as tech_t_first on tech_t_first.fr_id = fr.id
+inner join technology_stack as t_st_l on fr.id = t_st_l.freelancer_id
 
-inner join
-(
-    select freelancer_id as fr_id, tech.tech_name as t_name from technology_stack as t_st
-    left join technology as tech on tech.id = t_st.technology_id
-    where tech.tech_name = 'CSS'
-) as tech_t_second on tech_t_second.fr_id = fr.id
+inner join technology_stack as t_st_r on fr.id = t_st_r.freelancer_id
+
+inner join technology as tech on t_st_l.technology_id = tech.id
+
+inner join technology as tech_2 on t_st_r.technology_id = tech_2.id
+
+inner join project_done as pd on fr.id = pd.freelancer_id
+
+where tech.tech_name = 'HTML' and tech_2.tech_name = 'CSS'
+
+group by (  fr.id,
+		    fr.first_name || ' ' || fr.last_name,
+			fr.specialization,
+		  	fr.email,
+			tech.tech_name,
+			tech_2.tech_name)
+
+having (count(pd.id) >= 3)
 order by full_name
 ;
-
 
 
 
@@ -110,39 +107,33 @@ as $$
 $$ language plpgsql;
 
 
+
 select
-       fr.first_name || ' ' || fr.last_name as full_name,
-       b.freelancer_id,
-       fr.specialization,
-       fr_messages_count,
-       message_.date_time,
-       message_.text_message,
-       new_job.description
-from
-     freelancer as fr
-right join
-(
-    select count(*) as fr_messages_count, freelancer_id
-    from message_
-    where age(MY_CURR_DATE(), message_.date_time)::interval < '3 month'::interval
-      and  MY_CURR_DATE() > message_.date_time
-      and  message_.is_from_customer = false
-    group by message_.freelancer_id
+	fr.first_name || ' ' || fr.last_name as full_name,
+	count(fr.id) as messages_sent,
+	fr.email,
+	fr.specialization,
+	mess.date_time as when_sent,
+	mess.text_message
 
-) as b on b.freelancer_id = fr.id
+from freelancer as fr
+inner join message_ mess on fr.id = mess.freelancer_id
+inner join message_ mess_2 on fr.id = mess_2.freelancer_id
 
-left join
-    message_
-on
-    message_.freelancer_id = fr.id
+    where age(MY_CURR_DATE(), mess.date_time)::interval < '3 month'::interval
+      and  MY_CURR_DATE() > mess.date_time
+	  and  mess.is_from_customer = false
+	  and  mess_2.is_from_customer = false
 
-left join
-    new_job
-on
-    message_.job_id = new_job.id
-where
-      message_.is_from_customer = false
-order by freelancer_id;
+group by (fr.id,
+		  fr.first_name || ' ' || fr.last_name,
+		  fr.email,
+		  fr.specialization,
+		  mess.date_time,
+		  mess.text_message
+		 )
+order by fr.id, when_sent;
+
 
 
 
@@ -151,21 +142,23 @@ order by freelancer_id;
 --
 
 select
-    customer.first_name,
-    customer.id,
-    customer.organisation_name,
-    avg_price,
-    jobs_done
+	c1.first_name || ' ' || c1.last_name as customer_name,
+	c1.organisation_name,
+	avg(price::numeric)::money,
+	count(c1.id) as projects_done
 
-from customer
-         right join (
-    select count(*) as jobs_done, avg(new_job.price::numeric)::money as avg_price, customer_id as cust_id
-    from project_done
-    left join new_job
-        on project_done.job_id = new_job.id
-    group by new_job.customer_id
-) as avg_prices on customer.id = avg_prices.cust_id
+from customer as c1
+inner join new_job as nj_1 on nj_1.customer_id = c1.id
+inner join project_done as pd on pd.job_id = nj_1.id
+
+group by (c1.id,
+		  c1.first_name || ' ' || c1.last_name,
+		  c1.organisation_name
+		 )
+order by projects_done desc
 ;
+
+
 
 
 
@@ -207,7 +200,8 @@ select app.id, nj.deadline as customer_deadline,
        app.deadline as freelancer_deadline,
        nj.price as customer_price,
        app.price as freelancer_price,
-       app.description
+       app.description,
+       nj.header_ as job_header
 from application as app
 left join new_job as nj on nj.id = app.job_id
 where app.deadline < nj.deadline;
@@ -227,75 +221,67 @@ as $$
 $$ language plpgsql;
 
 
-SELECT
-       customer_id,
-       first_name,
-       count_cust_jobs,
-       DENSE_RANK() OVER (ORDER BY nj.customer_id),
-       posted::TIMESTAMP::DATE,
-       MY_CURR_DATE() AS curr_date,
-       age( MY_CURR_DATE(), posted) AS date_diff,
-       header_,
-       price,
-       deadline
+select
+	c1.first_name || ' ' || c1.last_name,
+	count(nj_2.id) as jobs_posted,
+	nj.posted,
+	age( MY_CURR_DATE(), nj.posted) AS date_diff,
+	nj.price,
+	nj.header_
 
-FROM new_job nj
+from new_job as nj
+inner join customer as c1 on c1.id = nj.customer_id
 
-RIGHT JOIN (
-    SELECT
-           c_2.id AS cust_id,
-           count(*) AS count_cust_jobs
+inner join customer as c2 on c2.id = nj.customer_id
+inner join new_job as nj_2 on nj_2.customer_id = c2.id
 
-    FROM customer c_2
-        INNER JOIN new_job nj_2
-            ON c_2.id = nj_2.customer_id
+where nj.id <> nj_2.id
+      and age(MY_CURR_DATE(), nj.posted)::INTERVAL  < '1 week'::INTERVAL
+      AND nj.posted < MY_CURR_DATE()
+      AND nj.price::NUMERIC < 400
 
-    WHERE age(MY_CURR_DATE(), posted)::INTERVAL  < '1 month'::INTERVAL
-      AND posted < MY_CURR_DATE()
-      AND price::NUMERIC < 400
-
-    GROUP BY c_2.id
-) AS b
-    ON nj.customer_id = b.cust_id
-
-LEFT JOIN customer ON customer.id = nj.customer_id
-
-WHERE age(MY_CURR_DATE(), posted)::INTERVAL  < '1 month'::INTERVAL
-  AND posted < MY_CURR_DATE()
-  AND price::NUMERIC < 400
-  AND count_cust_jobs > 1
+group by (	c1.first_name || ' ' || c1.last_name,
+	nj.posted,
+	age( MY_CURR_DATE(), nj.posted),
+	nj.price,
+	nj.header_) having (count(c1.id) > 1)
 ;
+
 
 
 
 -- 9. Получить список фрилансеров, имеющих одинаковые специализации,
 -- в описании которых присутствуют слова «облачн(ый|ых|ое)» и «сервис(ы|ов)».
 
-SELECT fr_1.first_name,
-       fr_1.specialization,
-       DENSE_RANK() OVER (ORDER BY fr_1.specialization) AS dense_rank,
-       fr_2.spec_count,
-       app.description
+select
+	fr.first_name || ' ' || fr.last_name,
+	fr.specialization,
+	count(fr.specialization) as same_specs,
+	app.deadline,
+	app.price,
+	app.description
 
-FROM freelancer AS fr_1
-INNER JOIN
-(
-    SELECT specialization, COUNT(*) AS spec_count
-    FROM freelancer
-	RIGHT JOIN application AS app ON app.freelancer_id = freelancer.id
-          WHERE (app.description SIMILAR TO '%облачн(ый|ых|ое)%') AND
-			  	(app.description SIMILAR TO '%сервис(ы|ов|ах)%')
-    GROUP BY specialization
-) fr_2
-ON fr_1.specialization = fr_2.specialization
+from freelancer as fr
+inner join application as app on app.freelancer_id = fr.id
 
-    RIGHT JOIN application AS app ON app.freelancer_id = fr_1.id
-	WHERE (app.description SIMILAR TO '%облачн(ый|ых|ое)%') AND
-	      (app.description SIMILAR TO '%сервис(ы|ов|ах)%') AND
-	      spec_count > 1
+cross join freelancer as fr_2
 
-ORDER BY dense_rank;
+where
 
+	((app.description similar to '%облачн(ый|ых|ое)%')
+	and (app.description similar to '%сервис(ы|ов|ах)%'))
+
+	and fr_2.id <> fr.id and fr_2.specialization = fr.specialization
+
+group by (
+	fr.first_name || ' ' || fr.last_name,
+	fr.specialization,
+	app.deadline,
+	app.price,
+	app.description
+)
+order by fr.specialization
+;
 
 
 
@@ -306,7 +292,7 @@ ORDER BY dense_rank;
 
 --- Получим только те, где цена исполнителя больше цены заказчика на 10% и более
 select new_job.id,
-	   header_,
+	   header_ as job_header,
 	   new_job.price as customer_price,
 	   app.price as freelancer_price,
 	   app.description,

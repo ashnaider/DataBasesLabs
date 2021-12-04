@@ -1,3 +1,24 @@
+
+-- 1. По заданной (с помощью заголовка) работе получить список сообщений с указанием имен их авторов,
+-- отсортированный в хронологическом порядке.
+
+select  text_message,
+		case
+			when is_from_customer = True then customer.first_name
+			when is_from_customer = False then fr.first_name
+		end as author_name,
+		header_, specialization
+
+		from message_ mess
+	inner join new_job on (mess.job_id = new_job.id and new_job.header_ = 'Создать кнопку + прогресс бар(нажал +10% нажал +20% нажал +50% и т.д)')
+	inner join freelancer fr on mess.freelancer_id = fr.id
+	inner join customer on customer.id = new_job.customer_id
+    order by mess.date_time ASC;
+
+
+
+
+
 -- 1. По заданной (с помощью заголовка) работе получить список сообщений с указанием имен их авторов,
 -- отсортированный в хронологическом порядке.
 
@@ -40,22 +61,6 @@ select text_message, GetAuthorOfMessage(message_.id) as Author from message_
     where message_.job_id = (select new_job.id from new_job
         where new_job.header_ = 'Создать кнопку + прогресс бар(нажал +10% нажал +20% нажал +50% и т.д)')
     order by message_.date_time ASC;
-
-
-
-
-select  text_message,
-		case
-			when is_from_customer = True then customer.first_name
-			when is_from_customer = False then fr.first_name
-		end as author_name,
-		header_, specialization
-
-		from message_ mess
-	inner join new_job on (mess.job_id = new_job.id and new_job.header_ = 'Создать кнопку + прогресс бар(нажал +10% нажал +20% нажал +50% и т.д)')
-	left join freelancer fr on mess.freelancer_id = fr.id
-	left join customer on customer.id = mess.job_id
-    order by mess.date_time ASC;
 
 
 

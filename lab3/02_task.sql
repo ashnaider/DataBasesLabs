@@ -27,5 +27,6 @@ where age(MY_CURR_DATE(), uc.date_time) < '7 day'::interval
 --                               'fraud',
                              'inappropriate_content'
                              )
+order by customer_id
 ;
 

@@ -2,6 +2,29 @@
 -- 5. По каждому заказчику получить информацию о средней стоимости успешно выполненных для него работ.
 --
 
+select
+	c1.first_name || ' ' || c1.last_name as customer_name,
+	c1.organisation_name,
+	avg(price::numeric)::money,
+	count(c1.id) as projects_done
+
+from customer as c1
+inner join new_job as nj_1 on nj_1.customer_id = c1.id
+inner join project_done as pd on pd.job_id = nj_1.id
+
+group by (c1.id,
+		  c1.first_name || ' ' || c1.last_name,
+		  c1.organisation_name
+		 )
+order by projects_done desc
+;
+
+
+
+--
+-- 5. По каждому заказчику получить информацию о средней стоимости успешно выполненных для него работ.
+--
+
 
 select
     customer.first_name,
