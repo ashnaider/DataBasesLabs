@@ -54,7 +54,8 @@ create table freelancer (
 	first_name name_domain not null,
 	last_name name_domain not null,
 	resume_link varchar(250),
-	specialization varchar(250) not null
+	specialization varchar(250) not null,
+    is_blocked boolean default false
 );
 
 create table technology_stack (
@@ -79,7 +80,8 @@ create table customer (
 	email email_domain not null,
 	first_name name_domain not null,
 	last_name name_domain,
-	organisation_name varchar(150)
+	organisation_name varchar(150),
+    is_blocked boolean default false
 );
 
 
@@ -95,7 +97,8 @@ create table new_job (
 	description varchar(650) not null,
 	price money not null check (price > 0::money),
 	hourly_rate money not null check (hourly_rate > 0::money),
-	is_done bool default false
+	is_done bool default false,
+    is_blocked boolean default false
 );
 
 
