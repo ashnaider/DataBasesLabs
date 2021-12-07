@@ -43,6 +43,10 @@ create or replace function BLOCK_JOB_IF_5_COMPLAINTS() returns trigger
             update new_job
                 set is_blocked = true
                 where id = NEW.job_id ;
+        else
+            update new_job
+                set is_blocked = false
+                where id = OLD.job_id;
         end if;
 
         return NEW;
@@ -51,7 +55,7 @@ $$ language plpgsql;
 
 --- Создадим триггер ---
 create trigger AUDIT_JOBS
-    after insert or update on job_complaint
+    after insert or update or delete on job_complaint
     for each row execute procedure BLOCK_JOB_IF_5_COMPLAINTS();
 
 
@@ -93,6 +97,7 @@ insert into job_complaint (date_time, complaint_type, description, freelancer_id
     ('2023-02-09 16:39:27', 'spam', 'Админы, проснитесь, у вас реклама микрокредитов в объявлениях висит!!!', 4, 16);
 
 
+delete from job_complaint where id in (13, 15);
 
 
 
