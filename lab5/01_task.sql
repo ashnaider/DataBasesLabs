@@ -6,8 +6,8 @@
 -- на которые подано больше 5 жалоб.
 
 
-drop function if exists BLOCK_JOB_IF_5_COMPLAINTS();
 drop trigger if exists AUDIT_JOBS on job_complaint;
+drop function if exists BLOCK_JOB_IF_5_COMPLAINTS();
 
 
 --- Функция для подсчёта жалоб на конкретное объявление ---
@@ -43,13 +43,13 @@ create or replace function BLOCK_JOB_IF_5_COMPLAINTS() returns trigger
             update new_job
                 set is_blocked = true
                 where id = NEW.job_id ;
+            return NEW;
         else
             update new_job
                 set is_blocked = false
                 where id = OLD.job_id;
+            return OLD;
         end if;
-
-        return NEW;
     end;
 $$ language plpgsql;
 

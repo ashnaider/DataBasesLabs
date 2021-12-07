@@ -20,11 +20,15 @@ drop domain password_domain;
 drop domain name_domain;
 drop domain login_domain;
 
+drop type if exists project_status;
+
 create table technology (
 	id serial not null primary key,
 	tech_name varchar(250) not NULL
 );
 
+
+create type project_status as enum ('new', 'in progress', 'done');
 
 create domain email_domain as varchar(150)
 	check(
@@ -97,7 +101,8 @@ create table new_job (
 	description varchar(650) not null,
 	price money not null check (price > 0::money),
 	hourly_rate money not null check (hourly_rate > 0::money),
-	is_done bool default false,
+-- 	is_done bool default false,
+    status project_status default 'new',
     is_blocked boolean default false
 );
 
@@ -115,7 +120,9 @@ create table application (
 
 	job_id int not null
 		references new_job(id)
-		on delete restrict on update cascade
+		on delete restrict on update cascade,
+
+    unique(freelancer_id, job_id)
 );
 
 
